@@ -3,34 +3,40 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: toferrei <toferrei@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: etom <etom@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 16:51:20 by toferrei          #+#    #+#             */
-/*   Updated: 2024/09/19 17:24:21 by toferrei         ###   ########.fr       */
+/*   Updated: 2024/09/22 23:44:27 by etom             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-#include <stdio.h>
+# include <stdio.h>
+# include <unistd.h>
 
-typedef struct s_list
+# include <string.h>
+# include <stdlib.h>
+# include <string.h>
+
+typedef struct node
 {
-	int				content;
-	struct s_list	*next;
-	struct s_list	*prev;
-}					t_list;
+	void			*content;
+	struct node		*next;
+	struct node		*prev;
+} node;
 
-typedef struct s_data
+typedef struct data
 {
-	t_list			**stack_a;
-	t_list			**stack_b;
-	int				*array;
-}					t_data;
+	node **stack_a;
+	node **stack_b;
+} data;
 
-// libft functions
-char	**ft_split(char const *s, char c);
-int		ft_atoi(const char *nptr);
+int			ft_atoi(const char *nptr);
+char		**ft_split(char const *s, char c);
+size_t		ft_strlcpy(char *dest, const char *src, size_t size);
+size_t		ft_strlen(const char *str);
+void		ft_lstprnt(node **lst);
 
 #endif

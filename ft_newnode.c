@@ -12,11 +12,11 @@
 
 #include "push_swap.h"
 
-t_list	*ft_newnode(void *content)
+e_list	*ft_newnode(void *content)
 {
-	t_list	*elem;
+	e_list	*elem;
 
-	elem = malloc(sizeof(t_list));
+	elem = malloc(sizeof(e_list));
 	if (!elem)
 		return (NULL);
 	elem->content = content;

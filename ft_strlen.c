@@ -1,31 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: toferrei <toferrei@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/13 18:52:21 by toferrei          #+#    #+#             */
-/*   Updated: 2024/04/13 19:05:15 by toferrei         ###   ########.fr       */
+/*   Created: 2024/04/08 16:08:57 by toferrei          #+#    #+#             */
+/*   Updated: 2024/04/11 14:12:47 by toferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
-char	*ft_strdup(const char *s)
+size_t	ft_strlen(const char *str)
 {
-	size_t	i;
-	char	*c;
+	unsigned long	i;
 
 	i = 0;
-	c = (char *)malloc(ft_strlen(s) + 1);
-	if (!c)
-		return (0);
-	while (s[i])
-	{
-		c[i] = s[i];
+	while (str[i] != '\0')
 		i++;
-	}
-	c[i] = '\0';
-	return (c);
+	return (i);
 }

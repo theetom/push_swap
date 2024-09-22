@@ -1,26 +1,14 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   new_list.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: toferrei <toferrei@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: etom <etom@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/09 13:38:13 by toferrei          #+#    #+#             */
-/*   Updated: 2024/04/13 18:29:18 by toferrei         ###   ########.fr       */
+/*   Created: 2024/09/22 00:14:33 by etom              #+#    #+#             */
+/*   Updated: 2024/09/22 00:15:01 by etom             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
-int	ft_tolower(int ch)
-{
-	if ('A' <= ch && ch <= 'Z')
-		return (ch + 32);
-	else
-		return (ch);
-}
-
-/* int	main(void)
-{
-	printf("%c", ft_tolower('+'));
-} */

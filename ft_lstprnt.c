@@ -1,25 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strteri.c                                       :+:      :+:    :+:   */
+/*   ft_lstprnt.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: etom <etom@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/25 11:22:24 by etom              #+#    #+#             */
-/*   Updated: 2024/04/25 11:38:45 by etom             ###   ########.fr       */
+/*   Created: 2024/09/22 00:56:05 by etom              #+#    #+#             */
+/*   Updated: 2024/09/22 23:36:01 by etom             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
-void	ft_striteri(char *s, void (*f)(unsigned int, char*))
+void ft_print_list(node **lst)
 {
-	unsigned int	n;
+    node *ptr;
+    *ptr = head;
+   printf("\n[ ");
 
-	n = 0;
-	while (s[n])
-	{
-		f(n, &s[n]);
-		n++;
-	}
+   //start from the beginning
+   if(lst.head != NULL) {
+      while(ptr->next != ptr) {
+         printf("(%d,%d) ",ptr->key,ptr->data);
+         ptr = ptr->next;
+      }
+   }
+   printf(" ]");
 }
