@@ -1,26 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_newnode.c                                       :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: etom <etom@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: toferrei <toferrei@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/19 17:04:10 by toferrei          #+#    #+#             */
-/*   Updated: 2024/09/23 01:27:17 by etom             ###   ########.fr       */
+/*   Created: 2024/04/26 17:24:28 by toferrei          #+#    #+#             */
+/*   Updated: 2024/04/30 16:41:01 by toferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-node_t	*ft_newnode(void *content)
+int	ft_lstsize(t_list *lst)
 {
-	node_t	*elem;
+	int	i;
 
-	elem = malloc(sizeof(node_t));
-	if (!elem)
-		return (NULL);
-	elem->content = content;
-	elem->next = NULL;
-	elem->prev = NULL;
-	return (elem);
+	i = 0;
+	if (!lst)
+		return (0);
+	while (lst)
+	{
+		lst = lst->next;
+		i++;
+	}
+	return (i);
 }

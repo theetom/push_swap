@@ -6,44 +6,43 @@
 /*   By: etom <etom@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 16:51:03 by toferrei          #+#    #+#             */
-/*   Updated: 2024/09/22 00:59:16 by etom             ###   ########.fr       */
+/*   Updated: 2024/09/23 01:48:23 by etom             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+
+void list_maker(data_t *data, char **input)
+{
+	int		n;
+	
+	n = 0;
+	while (input[n])
+			{
+				data->temp[n] = ft_atoi(input[n]);
+				n++;
+			}
+}
+
 int	main(int argc, char **argv)
 {
-	t_data	*data;
+	data_t	data;
 	char	**temp;
-	int		*temp2;
 	int		n;
-	int		o;
 
-	n = 0;
-	o = 1;
+	init(&data);
 	if (argc > 1)
 	{
 		if (argc == 2)
-		{
 			temp = ft_split(argv[1], ' ');
-			if (ft_strlen)
-			data->stack_a = ;
-			while (temp[n])
-			{
-				temp2[n] = ft_atoi(temp[n]);
-				n++;
-			}
-		}
-		// if (argc > 2)
-		// {
-		// 	while (argv[o])
-		// 	{
-		// 		temp2[n++] = ft_atoi(argv[o++]);
-		// 	}
-		// }
+		list_maker(&data, temp);
 	}
-	ft_print_list(data->stack_a);
-	else
-		return (0);
+	n = 0;
+	while(data.temp[n])
+	{
+		printf("%d\n", data.temp[n++]);
+	}
+	// ft_print_list(data->stack_a);
+	return (0);
 }

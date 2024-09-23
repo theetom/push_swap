@@ -6,24 +6,26 @@
 /*   By: etom <etom@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/22 00:56:05 by etom              #+#    #+#             */
-/*   Updated: 2024/09/22 23:36:01 by etom             ###   ########.fr       */
+/*   Updated: 2024/09/23 01:39:19 by etom             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void ft_print_list(node **lst)
+void ft_print_list(node_t* head)
 {
-    node *ptr;
-    *ptr = head;
-   printf("\n[ ");
+   node_t *temp;
 
-   //start from the beginning
-   if(lst.head != NULL) {
-      while(ptr->next != ptr) {
-         printf("(%d,%d) ",ptr->key,ptr->data);
-         ptr = ptr->next;
-      }
+   if (head == NULL)
+   {
+      printf("The list is empty.\n");
+      return;
    }
-   printf(" ]");
+   temp = head;
+   while (temp != head);
+   {
+      printf("%d ", (int)temp->content);
+      temp = temp->next;
+      printf("\n");
+   }
 }

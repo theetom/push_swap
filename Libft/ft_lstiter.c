@@ -1,26 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_newnode.c                                       :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: etom <etom@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: toferrei <toferrei@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/19 17:04:10 by toferrei          #+#    #+#             */
-/*   Updated: 2024/09/23 01:27:17 by etom             ###   ########.fr       */
+/*   Created: 2024/04/30 17:24:37 by toferrei          #+#    #+#             */
+/*   Updated: 2024/05/03 12:17:08 by toferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-node_t	*ft_newnode(void *content)
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	node_t	*elem;
-
-	elem = malloc(sizeof(node_t));
-	if (!elem)
-		return (NULL);
-	elem->content = content;
-	elem->next = NULL;
-	elem->prev = NULL;
-	return (elem);
+	while (lst)
+	{
+		(f)(lst->content);
+		lst = lst->next;
+	}
 }

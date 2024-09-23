@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_newnode.c                                       :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: etom <etom@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: toferrei <toferrei@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/19 17:04:10 by toferrei          #+#    #+#             */
-/*   Updated: 2024/09/23 01:27:17 by etom             ###   ########.fr       */
+/*   Created: 2024/04/09 13:09:28 by toferrei          #+#    #+#             */
+/*   Updated: 2024/04/13 18:19:26 by toferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-node_t	*ft_newnode(void *content)
+int	ft_toupper(int ch)
 {
-	node_t	*elem;
-
-	elem = malloc(sizeof(node_t));
-	if (!elem)
-		return (NULL);
-	elem->content = content;
-	elem->next = NULL;
-	elem->prev = NULL;
-	return (elem);
+	if ('a' <= ch && ch <= 'z')
+		return (ch - 32);
+	else
+		return (ch);
 }
+
+/* int	main(void)
+{
+	printf("%c", ft_toupper('+'));
+} */

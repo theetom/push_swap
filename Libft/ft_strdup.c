@@ -1,26 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_newnode.c                                       :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: etom <etom@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: toferrei <toferrei@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/19 17:04:10 by toferrei          #+#    #+#             */
-/*   Updated: 2024/09/23 01:27:17 by etom             ###   ########.fr       */
+/*   Created: 2024/04/13 18:52:21 by toferrei          #+#    #+#             */
+/*   Updated: 2024/04/13 19:05:15 by toferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-node_t	*ft_newnode(void *content)
+char	*ft_strdup(const char *s)
 {
-	node_t	*elem;
+	size_t	i;
+	char	*c;
 
-	elem = malloc(sizeof(node_t));
-	if (!elem)
-		return (NULL);
-	elem->content = content;
-	elem->next = NULL;
-	elem->prev = NULL;
-	return (elem);
+	i = 0;
+	c = (char *)malloc(ft_strlen(s) + 1);
+	if (!c)
+		return (0);
+	while (s[i])
+	{
+		c[i] = s[i];
+		i++;
+	}
+	c[i] = '\0';
+	return (c);
 }

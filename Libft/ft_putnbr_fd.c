@@ -1,26 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_newnode.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: etom <etom@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: toferrei <toferrei@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/19 17:04:10 by toferrei          #+#    #+#             */
-/*   Updated: 2024/09/23 01:27:17 by etom             ###   ########.fr       */
+/*   Created: 2024/04/26 13:15:27 by toferrei          #+#    #+#             */
+/*   Updated: 2024/04/26 13:25:40 by toferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-node_t	*ft_newnode(void *content)
+void	ft_putnbr_fd(int n, int fd)
 {
-	node_t	*elem;
+	long	nbr;
 
-	elem = malloc(sizeof(node_t));
-	if (!elem)
-		return (NULL);
-	elem->content = content;
-	elem->next = NULL;
-	elem->prev = NULL;
-	return (elem);
+	nbr = n;
+	if (nbr < 0)
+	{
+		write(fd, "-", 1);
+		nbr = -nbr;
+	}
+	if (nbr > 9)
+	{
+		ft_putnbr_fd (nbr / 10, fd);
+		ft_putnbr_fd (nbr % 10, fd);
+	}
+	else
+		ft_putchar_fd (nbr + '0', fd);
 }

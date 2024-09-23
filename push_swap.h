@@ -6,7 +6,7 @@
 /*   By: etom <etom@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 16:51:20 by toferrei          #+#    #+#             */
-/*   Updated: 2024/09/22 23:44:27 by etom             ###   ########.fr       */
+/*   Updated: 2024/09/23 01:41:16 by etom             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,23 +20,25 @@
 # include <stdlib.h>
 # include <string.h>
 
-typedef struct node
+typedef struct node_s
 {
-	void			*content;
-	struct node		*next;
-	struct node		*prev;
-} node;
+	void				*content;
+	struct node_s		*next;
+	struct node_s		*prev;
+} node_t;
 
-typedef struct data
+typedef struct data_s
 {
-	node **stack_a;
-	node **stack_b;
-} data;
+	node_t **stack_a;
+	node_t **stack_b;
+	char	*temp;
+} data_t;
 
 int			ft_atoi(const char *nptr);
 char		**ft_split(char const *s, char c);
 size_t		ft_strlcpy(char *dest, const char *src, size_t size);
 size_t		ft_strlen(const char *str);
-void		ft_lstprnt(node **lst);
+void		ft_lstprnt(node_t **lst);
+void		init(data_t *data);
 
 #endif
