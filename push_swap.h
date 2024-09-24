@@ -6,7 +6,7 @@
 /*   By: etom <etom@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 16:51:20 by toferrei          #+#    #+#             */
-/*   Updated: 2024/09/23 01:41:16 by etom             ###   ########.fr       */
+/*   Updated: 2024/09/23 23:35:50 by etom             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,14 +25,14 @@ typedef struct node_s
 	void				*content;
 	struct node_s		*next;
 	struct node_s		*prev;
-} node_t;
+}						node_t;
 
 typedef struct data_s
 {
-	node_t **stack_a;
-	node_t **stack_b;
-	char	*temp;
-} data_t;
+	node_t		**stack_a;
+	node_t		**stack_b;
+	int			*temp;
+}				data_t;
 
 int			ft_atoi(const char *nptr);
 char		**ft_split(char const *s, char c);

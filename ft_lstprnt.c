@@ -6,7 +6,7 @@
 /*   By: etom <etom@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/22 00:56:05 by etom              #+#    #+#             */
-/*   Updated: 2024/09/23 01:39:19 by etom             ###   ########.fr       */
+/*   Updated: 2024/09/23 23:26:11 by etom             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,7 @@ void ft_print_list(node_t* head)
    temp = head;
    while (temp != head);
    {
-      printf("%d ", (int)temp->content);
+      printf("%d\n", (int)temp->content);
       temp = temp->next;
-      printf("\n");
    }
 }
