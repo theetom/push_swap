@@ -1,14 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   new_list.c                                         :+:      :+:    :+:   */
+/*   ft_putchar_fd_pf.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: etom <etom@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: toferrei <toferrei@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/22 00:14:33 by etom              #+#    #+#             */
-/*   Updated: 2024/09/22 00:15:01 by etom             ###   ########.fr       */
+/*   Created: 2024/04/26 12:33:48 by toferrei          #+#    #+#             */
+/*   Updated: 2024/05/10 19:10:45 by toferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "ft_printf.h"
 
+size_t	ft_putchar_fd_pf(char c, int fd)
+{
+	return (write(fd, &c, sizeof(c)));
+}

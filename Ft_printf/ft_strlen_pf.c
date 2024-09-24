@@ -1,20 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init.c                                             :+:      :+:    :+:   */
+/*   ft_strlen_pf.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: toferrei <toferrei@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/23 00:46:39 by etom              #+#    #+#             */
-/*   Updated: 2024/09/24 16:35:43 by toferrei         ###   ########.fr       */
+/*   Created: 2024/04/08 16:08:57 by toferrei          #+#    #+#             */
+/*   Updated: 2024/05/10 11:32:29 by toferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "ft_printf.h"
 
-void init(t_data *data)
+size_t	ft_strlen_pf(const char *str)
 {
-    data->stack_a = NULL;
-    data->stack_b = NULL;
-    data->temp = NULL;
+	unsigned long	i;
+
+	i = 0;
+	while (str[i] != '\0')
+		i++;
+	return (i);
 }

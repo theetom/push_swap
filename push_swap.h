@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: etom <etom@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: toferrei <toferrei@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 16:51:20 by toferrei          #+#    #+#             */
-/*   Updated: 2024/09/23 23:35:50 by etom             ###   ########.fr       */
+/*   Updated: 2024/09/24 17:05:27 by toferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,26 +19,34 @@
 # include <string.h>
 # include <stdlib.h>
 # include <string.h>
+# include "Libft/libft.h"
+# include "Ft_printf/ft_printf.h"
 
 typedef struct node_s
 {
 	void				*content;
 	struct node_s		*next;
 	struct node_s		*prev;
-}						node_t;
+}						t_node;
 
-typedef struct data_s
+typedef struct s_data
 {
-	node_t		**stack_a;
-	node_t		**stack_b;
+	t_node		**stack_a;
+	t_node		**stack_b;
 	int			*temp;
-}				data_t;
+	size_t		size_temp;
+}				t_data;
 
-int			ft_atoi(const char *nptr);
-char		**ft_split(char const *s, char c);
-size_t		ft_strlcpy(char *dest, const char *src, size_t size);
-size_t		ft_strlen(const char *str);
-void		ft_lstprnt(node_t **lst);
-void		init(data_t *data);
+
+void	ft_lstprnt(t_node **lst);
+
+void	init(t_data *data);
+
+void	error_message(size_t err);
+
+void	first_verifs(int argc, char **argv);
+int		is_list_valid(t_data *data, int *lst);
+
+int		*parser(t_data *data, int argc, char **argv);
 
 #endif

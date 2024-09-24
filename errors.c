@@ -1,20 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init.c                                             :+:      :+:    :+:   */
+/*   errors.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: toferrei <toferrei@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/23 00:46:39 by etom              #+#    #+#             */
-/*   Updated: 2024/09/24 16:35:43 by toferrei         ###   ########.fr       */
+/*   Created: 2024/09/24 14:59:44 by toferrei          #+#    #+#             */
+/*   Updated: 2024/09/24 16:56:23 by toferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void init(t_data *data)
+// error message handler
+
+void error_message(size_t err)
 {
-    data->stack_a = NULL;
-    data->stack_b = NULL;
-    data->temp = NULL;
+	if (err == 0)
+		ft_printf("Malloc error\n");
+	if (err == 1)
+		ft_printf("Wrong number of arguments\n");
+	if (err == 2)
+		ft_printf("Wrong argument input\n");
+	if (err == 3)
+		ft_printf("Not enough numbers to sort\n");
+	if (err == 4)
+		ft_printf("Repeated number\n");
+	exit (0);
 }

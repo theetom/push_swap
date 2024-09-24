@@ -1,20 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init.c                                             :+:      :+:    :+:   */
+/*   ft_putnbr_base_pf.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: toferrei <toferrei@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/23 00:46:39 by etom              #+#    #+#             */
-/*   Updated: 2024/09/24 16:35:43 by toferrei         ###   ########.fr       */
+/*   Created: 2024/03/14 15:51:04 by toferrei          #+#    #+#             */
+/*   Updated: 2024/05/10 19:10:31 by toferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "ft_printf.h"
 
-void init(t_data *data)
+size_t	ft_putnbr_base_pf(long nb, char *base)
 {
-    data->stack_a = NULL;
-    data->stack_b = NULL;
-    data->temp = NULL;
+	long	b;
+	size_t	x;
+
+	x = 0;
+	b = ft_strlen_pf(base);
+	if (nb < 0)
+	{
+		x += write(1, "-", 1);
+		nb = -nb;
+	}
+	if (nb > b - 1)
+		x += ft_putnbr_base_pf(nb / b, base);
+	x += write(1, &base[nb % b], 1);
+	return (x);
 }

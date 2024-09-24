@@ -1,23 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_base_u_pf.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: toferrei <toferrei@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/08 16:08:57 by toferrei          #+#    #+#             */
-/*   Updated: 2024/04/11 14:12:47 by toferrei         ###   ########.fr       */
+/*   Created: 2024/05/10 17:33:07 by toferrei          #+#    #+#             */
+/*   Updated: 2024/05/10 19:10:10 by toferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "ft_printf.h"
 
-size_t	ft_strlen(const char *str)
+size_t	ft_putnbr_base_u_pf(unsigned int nb, char *base)
 {
-	unsigned long	i;
+	long	b;
+	size_t	x;
 
-	i = 0;
-	while (str[i] != '\0')
-		i++;
-	return (i);
+	x = 0;
+	b = ft_strlen_pf(base);
+	if (nb < 0)
+	{
+		x += write(1, "-", 1);
+		nb = -nb;
+	}
+	if (nb > b - 1)
+		x += ft_putnbr_base_pf(nb / b, base);
+	x += write(1, &base[nb % b], 1);
+	return (x);
 }
