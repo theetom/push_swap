@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstprnt.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: etom <etom@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: toferrei <toferrei@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/22 00:56:05 by etom              #+#    #+#             */
-/*   Updated: 2024/09/25 13:33:13 by etom             ###   ########.fr       */
+/*   Updated: 2024/09/25 19:26:46 by toferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,16 +19,12 @@ void	ft_print_list(t_node *lst, size_t size)
 
 	n = 0;
 	if (lst == NULL)
-	{
-		printf("The list is empty.\n");
-		return;
-	}
-	printf("ola");
+		error_message(5);
 	temp = lst;
 	while (n < size)
 	{
-		ft_printf("%daqui\n", temp->content);
-		lst = lst->next;
+		ft_printf("%d", temp->content);
+		temp = temp->next;
 		n++;
 	}
 }

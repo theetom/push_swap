@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_newnode.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: etom <etom@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: toferrei <toferrei@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 17:04:10 by toferrei          #+#    #+#             */
-/*   Updated: 2024/09/25 13:22:32 by etom             ###   ########.fr       */
+/*   Updated: 2024/09/25 19:24:45 by toferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,7 @@ t_node	*ft_newnode(int content)
 {
 	t_node	*elem;
 
-	printf("new node bvefore\n");
-	elem = malloc(sizeof(t_node));
+	elem = malloc(sizeof * elem);
 	if (!elem)
 		return (NULL);
 	elem->content = content;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   last_of_list.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: etom <etom@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: toferrei <toferrei@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 01:37:48 by etom              #+#    #+#             */
-/*   Updated: 2024/09/25 13:27:46 by etom             ###   ########.fr       */
+/*   Updated: 2024/09/25 19:24:42 by toferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,7 @@
 
 t_node	*ft_listlast(t_node *lst)
 {
-	printf("ultimo antes\n");
 	if (!lst)
 		return (NULL);
-	printf("ultimo fim\n");
 	return (lst->prev);
 }
