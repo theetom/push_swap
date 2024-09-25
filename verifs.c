@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   verifs.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: toferrei <toferrei@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: etom <etom@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 15:03:44 by toferrei          #+#    #+#             */
-/*   Updated: 2024/09/24 17:13:35 by toferrei         ###   ########.fr       */
+/*   Updated: 2024/09/25 02:55:37 by etom             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,10 +37,10 @@ int is_list_valid(t_data *data, int *lst)
 	size_t	m;
 
 	n = 0;
-	while(n < data->size_temp)
+	while(n < data->size)
 	{
 		m = n + 1;
-		while (m < data->size_temp)
+		while (m < data->size)
 		{
 			if (lst[n] == lst[m])
 				return (0);

@@ -1,44 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   new_list.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: etom <etom@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/18 16:51:03 by toferrei          #+#    #+#             */
-/*   Updated: 2024/09/25 13:31:41 by etom             ###   ########.fr       */
+/*   Created: 2024/09/25 03:16:53 by etom              #+#    #+#             */
+/*   Updated: 2024/09/25 13:44:47 by etom             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void print_array(int *arr, t_data *data)
+void	list_maker(t_data *data, int *arr)
 {
-	size_t		n;
+	size_t	n;
+	t_node	*temp;
+	data->stack_a = malloc(sizeof * data->stack_a);
 
 	n = 0;
 	while (n < data->size)
 	{
-		ft_printf("%d\n", arr[n]);
+		printf("list maker begining loop\n");
+		temp = ft_newnode(arr[n]);
+		printf("%d\n", temp->content);
+		ft_list_add_back(data->stack_a, temp);
 		n++;
 	}
-}
-
-int	main(int argc, char **argv)
-{
-	t_data	data;
-	int		*temp;
-	int		n = 0;
-
-	init(&data);
-	first_verifs(argc, argv);
-	temp = parser(&data, argc, argv);
-	if (is_list_valid(&data, temp) == 0)
-		error_message(4);
-	list_maker(&data, temp);
-	// print_array(temp, &data);
-	ft_print_list(*(data.stack_a), data.size);
-	free(temp);
-	free(data.stack_a);
-	return (0);
 }

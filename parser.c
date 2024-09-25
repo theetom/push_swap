@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parser.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: toferrei <toferrei@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: etom <etom@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 16:21:53 by toferrei          #+#    #+#             */
-/*   Updated: 2024/09/24 16:35:51 by toferrei         ###   ########.fr       */
+/*   Updated: 2024/09/25 02:55:48 by etom             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	*string_parser(t_data *data, char *str)
 		result[n] = ft_atoi(temp[n]);
 		n++;
 	}
-	data->size_temp = n;
+	data->size = n;
 	n = 0;
 	while(temp[n])
 		free(temp[n++]);
@@ -54,7 +54,7 @@ int	*args_parser(t_data *data, int argc, char **argv)
 		result[n - 1] = ft_atoi(argv[n]);
 		n++;
 	}
-	data->size_temp = n - 1;
+	data->size = n - 1;
 	return (result);
 }
 
@@ -68,7 +68,7 @@ int	*parser(t_data *data, int argc, char **argv)
 		result = string_parser(data, argv[1]);
 	else
 		result = args_parser(data, argc, argv);
-	if (data->size_temp < 2)
+	if (data->size < 2)
 		error_message(3);
 	return (result);
 }
