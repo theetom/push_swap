@@ -6,7 +6,7 @@
 /*   By: toferrei <toferrei@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 16:51:03 by toferrei          #+#    #+#             */
-/*   Updated: 2024/09/30 16:56:20 by toferrei         ###   ########.fr       */
+/*   Updated: 2024/09/30 17:46:07 by toferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,8 @@ int	main(int argc, char **argv)
 		error_message(4);
 	list_maker(&data, temp);
 	// print_array(temp, &data);
+	ft_print_list(*(data.stack_a), data.size);
+	ss(&data);
 	ft_print_list(*(data.stack_a), data.size);
 	free(temp);
 	clean_list(data.stack_a);//, data.size);

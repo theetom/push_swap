@@ -6,7 +6,7 @@
 /*   By: toferrei <toferrei@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/26 16:17:26 by toferrei          #+#    #+#             */
-/*   Updated: 2024/09/30 16:24:03 by toferrei         ###   ########.fr       */
+/*   Updated: 2024/09/30 17:45:35 by toferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,13 @@ static void	swap(t_node **lst)
 	first = *lst;
 	second = first->next;
 	last = first->prev;
-	second->next = first;
-	
+	first->next = second->next;
+    second->next->prev = first;
+    second->next = first;
+    second->prev = last;
+    first->prev = second;
+    last->next = second;
+	*lst = second;
 }
 
 void	sa(t_data *data)

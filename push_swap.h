@@ -6,7 +6,7 @@
 /*   By: toferrei <toferrei@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 16:51:20 by toferrei          #+#    #+#             */
-/*   Updated: 2024/09/30 16:41:30 by toferrei         ###   ########.fr       */
+/*   Updated: 2024/09/30 17:12:21 by toferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,5 +53,11 @@ void	ft_list_add_back(t_node **lst, t_node *new);
 void	ft_print_list(t_node *lst, size_t size);
 t_node	*ft_newnode(int content);
 void	clean_list(t_node **lst);
+
+// swap fx
+
+void	sa(t_data *data);
+void	sb(t_data *data);
+void	ss(t_data *data);
 
 #endif
