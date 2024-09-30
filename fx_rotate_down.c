@@ -1,31 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list_add_back.c                                 :+:      :+:    :+:   */
+/*   fx_rotate_down.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: toferrei <toferrei@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/25 01:33:51 by etom              #+#    #+#             */
-/*   Updated: 2024/09/30 18:41:07 by toferrei         ###   ########.fr       */
+/*   Created: 2024/09/30 20:07:03 by toferrei          #+#    #+#             */
+/*   Updated: 2024/09/30 20:07:46 by toferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_list_add_back(t_node **lst, t_node *new)
+static void rotatedown(t_node **lst)
 {
-	t_node	*last;
-
-	last = ft_listlast(*lst);
-	if (!last)
-	{
-		*lst = new;
-		new->next = new;
-		new->prev = new;
+	if (!(*lst))
 		return ;
-	}
-	last->next = new;
-	new->prev = last;
-	new->next = *lst;
-	(*lst)->prev = new;
+	*lst = (*lst)->prev;
+}
+
+void rra(t_data *data)
+{
+	rotatedown(data->stack_a);
+	ft_printf("rra\n");
+}
+
+void rrb(t_data *data)
+{
+	rotatedown(data->stack_b);
+	ft_printf("rrb\n");
+}
+
+void rrr(t_data *data)
+{
+	rotatedown(data->stack_a);
+	rotatedown(data->stack_b);
+	ft_printf("rrr\n");
 }

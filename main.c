@@ -6,7 +6,7 @@
 /*   By: toferrei <toferrei@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 16:51:03 by toferrei          #+#    #+#             */
-/*   Updated: 2024/09/30 17:46:07 by toferrei         ###   ########.fr       */
+/*   Updated: 2024/09/30 20:07:54 by toferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,17 @@ int	main(int argc, char **argv)
 		error_message(4);
 	list_maker(&data, temp);
 	// print_array(temp, &data);
-	ft_print_list(*(data.stack_a), data.size);
-	ss(&data);
-	ft_print_list(*(data.stack_a), data.size);
+	
+	ft_printf("lista a:\n");
+	ft_print_list(*(data.stack_a));
+	ft_printf("lista b:\n");
+	ft_print_list(*(data.stack_b));
+	ra(&data);
+
+	ft_printf("lista a:\n");
+	ft_print_list(*(data.stack_a));
+	ft_printf("lista b:\n");
+	ft_print_list(*(data.stack_b));
 	free(temp);
 	clean_list(data.stack_a);//, data.size);
 	clean_list(data.stack_b);

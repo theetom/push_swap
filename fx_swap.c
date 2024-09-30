@@ -6,7 +6,7 @@
 /*   By: toferrei <toferrei@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/26 16:17:26 by toferrei          #+#    #+#             */
-/*   Updated: 2024/09/30 17:45:35 by toferrei         ###   ########.fr       */
+/*   Updated: 2024/09/30 20:03:34 by toferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,18 +35,18 @@ static void	swap(t_node **lst)
 void	sa(t_data *data)
 {
 	swap(data->stack_a);
-	printf("sa\n");
+	ft_printf("sa\n");
 }
 
 void	sb(t_data *data)
 {
 	swap(data->stack_b);
-	printf("sa\n");
+	ft_printf("sa\n");
 }
 
 void	ss(t_data *data)
 {
 	swap(data->stack_a);
 	swap(data->stack_b);
-	printf("ss\n");
+	ft_printf("ss\n");
 }

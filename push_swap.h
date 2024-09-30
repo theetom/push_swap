@@ -6,7 +6,7 @@
 /*   By: toferrei <toferrei@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 16:51:20 by toferrei          #+#    #+#             */
-/*   Updated: 2024/09/30 17:12:21 by toferrei         ###   ########.fr       */
+/*   Updated: 2024/09/30 20:08:44 by toferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,9 +49,14 @@ int		is_list_valid(t_data *data, int *lst);
 int		*parser(t_data *data, int argc, char **argv);
 
 void	list_maker(t_data *data, int *arr);
-void	ft_list_add_back(t_node **lst, t_node *new);
-void	ft_print_list(t_node *lst, size_t size);
+
 t_node	*ft_newnode(int content);
+void	ft_list_add_back(t_node **lst, t_node *new);
+void	ft_list_add_front(t_node **lst, t_node *new);
+t_node	*ft_listlast(t_node *lst);
+
+void	ft_print_list(t_node *lst);
+
 void	clean_list(t_node **lst);
 
 // swap fx
@@ -59,5 +64,22 @@ void	clean_list(t_node **lst);
 void	sa(t_data *data);
 void	sb(t_data *data);
 void	ss(t_data *data);
+
+// push fx
+
+void pa(t_data *data);
+void pb(t_data *data);
+
+// rotate up fx
+
+void	ra(t_data *data);
+void	rb(t_data *data);
+void	rr(t_data *data);
+
+// rotate down fx
+
+void	rra(t_data *data);
+void	rrb(t_data *data);
+void	rrr(t_data *data);
 
 #endif
