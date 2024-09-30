@@ -1,20 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   last_of_list.c                                     :+:      :+:    :+:   */
+/*   List_cleaner.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: toferrei <toferrei@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/25 01:37:48 by etom              #+#    #+#             */
-/*   Updated: 2024/09/25 19:24:42 by toferrei         ###   ########.fr       */
+/*   Created: 2024/09/30 16:35:08 by toferrei          #+#    #+#             */
+/*   Updated: 2024/09/30 17:02:57 by toferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_node	*ft_listlast(t_node *lst)
+void	clean_list(t_node **lst)
 {
+	t_node	*temp;
+
 	if (!lst)
-		return (NULL);
-	return (lst->prev);
+		return ;
+	if (*lst)
+	{
+		temp = *lst;
+		*lst = (*lst)->prev;
+		(*lst)->next = NULL;
+		*lst = temp;
+		while (*lst)
+		{
+			temp = (*lst)->next;
+			free(*lst);
+			*lst = temp;
+		}
+	}
+	free(lst);
+	lst = NULL;
 }

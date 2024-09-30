@@ -6,28 +6,11 @@
 /*   By: toferrei <toferrei@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 16:51:03 by toferrei          #+#    #+#             */
-/*   Updated: 2024/09/25 19:28:31 by toferrei         ###   ########.fr       */
+/*   Updated: 2024/09/30 16:56:20 by toferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-void	clean_list(t_node *lst, size_t size)
-{
-	t_node	*temp;
-	size_t	n;
-
-	n = 0;
-	if (lst == NULL)
-		error_message(5);
-	temp = lst;
-	while (n < size)
-	{
-		ft_printf("%d", temp->content);
-		temp = temp->next;
-		n++;
-	}
-}
 
 void print_array(int *arr, t_data *data)
 {
@@ -55,7 +38,7 @@ int	main(int argc, char **argv)
 	// print_array(temp, &data);
 	ft_print_list(*(data.stack_a), data.size);
 	free(temp);
-	clean_list(*(data.stack_a), data.size);
-	free(data.stack_a);
+	clean_list(data.stack_a);//, data.size);
+	clean_list(data.stack_b);
 	return (0);
 }

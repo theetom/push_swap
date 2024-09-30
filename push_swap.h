@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: etom <etom@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: toferrei <toferrei@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 16:51:20 by toferrei          #+#    #+#             */
-/*   Updated: 2024/09/25 13:31:21 by etom             ###   ########.fr       */
+/*   Updated: 2024/09/30 16:41:30 by toferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,6 @@ typedef struct s_data
 }				t_data;
 
 
-void	ft_lstprnt(t_node **lst);
 
 void	init(t_data *data);
 
@@ -53,6 +52,6 @@ void	list_maker(t_data *data, int *arr);
 void	ft_list_add_back(t_node **lst, t_node *new);
 void	ft_print_list(t_node *lst, size_t size);
 t_node	*ft_newnode(int content);
-t_node	*ft_listlast(t_node *lst);
+void	clean_list(t_node **lst);
 
 #endif

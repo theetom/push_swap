@@ -6,7 +6,7 @@
 /*   By: toferrei <toferrei@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 14:59:44 by toferrei          #+#    #+#             */
-/*   Updated: 2024/09/25 19:25:47 by toferrei         ###   ########.fr       */
+/*   Updated: 2024/09/26 14:21:50 by toferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,5 @@ void error_message(size_t err)
 		ft_printf("Repeated number\n");
 	if (err == 5)
 		ft_printf("The list is empty.\n");
-	exit (0);
+	exit (1);
 }
