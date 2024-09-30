@@ -6,7 +6,7 @@
 /*   By: toferrei <toferrei@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 16:51:20 by toferrei          #+#    #+#             */
-/*   Updated: 2024/09/30 20:08:44 by toferrei         ###   ########.fr       */
+/*   Updated: 2024/09/30 20:37:52 by toferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,11 @@
 # include "Libft/libft.h"
 # include "Ft_printf/ft_printf.h"
 
-typedef struct node_s
+typedef struct s_node
 {
 	int					content;
-	struct node_s		*next;
-	struct node_s		*prev;
+	struct s_node		*next;
+	struct s_node		*prev;
 }						t_node;
 
 typedef struct s_data
