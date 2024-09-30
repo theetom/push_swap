@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: toferrei <toferrei@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: etom <etom@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/23 00:46:39 by etom              #+#    #+#             */
-/*   Updated: 2024/09/24 16:35:43 by toferrei         ###   ########.fr       */
+/*   Updated: 2024/10/01 00:17:36 by etom             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,4 +17,5 @@ void init(t_data *data)
     data->stack_a = NULL;
     data->stack_b = NULL;
     data->temp = NULL;
+    data->max_value = 0;
 }

@@ -6,13 +6,13 @@
 /*   By: etom <etom@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 16:21:53 by toferrei          #+#    #+#             */
-/*   Updated: 2024/09/25 02:55:48 by etom             ###   ########.fr       */
+/*   Updated: 2024/10/01 00:17:10 by etom             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	*string_parser(t_data *data, char *str)
+static int	*string_parser(t_data *data, char *str)
 {
 	char	**temp;
 	int		*result;
@@ -29,6 +29,8 @@ int	*string_parser(t_data *data, char *str)
 	while (temp[n])
 	{
 		result[n] = ft_atoi(temp[n]);
+		if (result[n] > data->max_value)
+			data->max_value = result[n];
 		n++;
 	}
 	data->size = n;
@@ -39,7 +41,7 @@ int	*string_parser(t_data *data, char *str)
 	return (result);
 }
 
-int	*args_parser(t_data *data, int argc, char **argv)
+static int	*args_parser(t_data *data, int argc, char **argv)
 {
 	int		*result;
 	size_t	n;
@@ -52,6 +54,8 @@ int	*args_parser(t_data *data, int argc, char **argv)
 	while (argv[n])
 	{
 		result[n - 1] = ft_atoi(argv[n]);
+		if (result[n - 1] > data->max_value)
+			data->max_value = result[n - 1];
 		n++;
 	}
 	data->size = n - 1;

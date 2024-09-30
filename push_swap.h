@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: toferrei <toferrei@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: etom <etom@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 16:51:20 by toferrei          #+#    #+#             */
-/*   Updated: 2024/09/30 20:37:52 by toferrei         ###   ########.fr       */
+/*   Updated: 2024/10/01 00:14:58 by etom             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,17 +34,27 @@ typedef struct s_data
 	t_node		**stack_a;
 	t_node		**stack_b;
 	int			*temp;
-	size_t		size;
+	int			max_value;
+	size_t		size; //size of array aka qtt of nbs to sort
+	size_t		s_s_b; // size stack b
 }				t_data;
 
+// All functions
 
+// 		Initialization
 
 void	init(t_data *data);
 
+//		Error Messages
+
 void	error_message(size_t err);
 
+//		Verifications
+
 void	first_verifs(int argc, char **argv);
-int		is_list_valid(t_data *data, int *lst);
+int		is_list_valid(t_data *data, int *lst); // are there any doubles
+
+//		
 
 int		*parser(t_data *data, int argc, char **argv);
 
