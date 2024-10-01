@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_newnode.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: toferrei <toferrei@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: toferrei <toferrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/19 17:04:10 by toferrei          #+#    #+#             */
-/*   Updated: 2024/09/25 19:24:45 by toferrei         ###   ########.fr       */
+/*   Updated: 2024/10/01 14:01:45 by toferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_node	*ft_newnode(int content)
+t_node	*ft_newnode(int content, size_t index)
 {
 	t_node	*elem;
 
@@ -20,7 +20,8 @@ t_node	*ft_newnode(int content)
 	if (!elem)
 		return (NULL);
 	elem->content = content;
+	elem->index = index;
 	elem->next = NULL;
 	elem->prev = NULL;
 	return (elem);
-}
+}	

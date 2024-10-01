@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parser.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: etom <etom@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: toferrei <toferrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 16:21:53 by toferrei          #+#    #+#             */
-/*   Updated: 2024/10/01 00:17:10 by etom             ###   ########.fr       */
+/*   Updated: 2024/10/01 15:37:43 by toferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static int	*string_parser(t_data *data, char *str)
 	temp = ft_split(str, ' ');
 	while (temp[n])
 		n++;
-	result = malloc(sizeof * result * (n + 1));
+	result = malloc(sizeof * result * n);
 	if (!result)
 		error_message(0);
 	n = 0;

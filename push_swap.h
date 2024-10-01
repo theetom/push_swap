@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: etom <etom@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: toferrei <toferrei@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 16:51:20 by toferrei          #+#    #+#             */
-/*   Updated: 2024/10/01 00:14:58 by etom             ###   ########.fr       */
+/*   Updated: 2024/10/01 13:19:47 by toferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@
 typedef struct s_node
 {
 	int					content;
+	size_t				index;
 	struct s_node		*next;
 	struct s_node		*prev;
 }						t_node;
@@ -39,9 +40,11 @@ typedef struct s_data
 	size_t		s_s_b; // size stack b
 }				t_data;
 
-// All functions
+void	print_array(int *arr, t_data *data);
 
-// 		Initialization
+//	All functions
+
+//		Initialization
 
 void	init(t_data *data);
 
@@ -52,15 +55,19 @@ void	error_message(size_t err);
 //		Verifications
 
 void	first_verifs(int argc, char **argv);
-int		is_list_valid(t_data *data, int *lst); // are there any doubles
+int		is_list_valid(t_data *data, int *lst); // are there any doubles?
 
-//		
+//		Parsing (args to int array)
 
 int		*parser(t_data *data, int argc, char **argv);
 
+//		Int array to double circular linked list
+
 void	list_maker(t_data *data, int *arr);
 
-t_node	*ft_newnode(int content);
+//		Utils for lists
+
+t_node	*ft_newnode(int content, size_t index);
 void	ft_list_add_back(t_node **lst, t_node *new);
 void	ft_list_add_front(t_node **lst, t_node *new);
 t_node	*ft_listlast(t_node *lst);
@@ -69,24 +76,26 @@ void	ft_print_list(t_node *lst);
 
 void	clean_list(t_node **lst);
 
-// swap fx
+//		Subject Functions
+
+//			swap fx
 
 void	sa(t_data *data);
 void	sb(t_data *data);
 void	ss(t_data *data);
 
-// push fx
+//			push fx
 
-void pa(t_data *data);
-void pb(t_data *data);
+void	pa(t_data *data);
+void	pb(t_data *data);
 
-// rotate up fx
+//			rotate up fx
 
 void	ra(t_data *data);
 void	rb(t_data *data);
 void	rr(t_data *data);
 
-// rotate down fx
+//			rotate down fx
 
 void	rra(t_data *data);
 void	rrb(t_data *data);

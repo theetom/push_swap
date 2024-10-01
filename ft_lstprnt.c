@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstprnt.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: toferrei <toferrei@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: toferrei <toferrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/22 00:56:05 by etom              #+#    #+#             */
-/*   Updated: 2024/09/30 20:14:39 by toferrei         ###   ########.fr       */
+/*   Updated: 2024/10/01 14:59:51 by toferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,13 @@ void	ft_print_list(t_node *lst)
 	}
 	temp = lst;
 	last = lst->prev;
-	ft_printf("%d\n", temp->content);
-		temp = temp->next;
+	ft_printf("%d	", temp->content);
+	ft_printf("%d\n", temp->index);
+	temp = temp->next;
 	while (temp->prev != last)
 	{
-		ft_printf("%d\n", temp->content);
+		ft_printf("%d	", temp->content);
+		ft_printf("%d\n", temp->index);
 		temp = temp->next;
 	}
 }

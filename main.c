@@ -3,14 +3,32 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: etom <etom@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: toferrei <toferrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 16:51:03 by toferrei          #+#    #+#             */
-/*   Updated: 2024/10/01 00:18:27 by etom             ###   ########.fr       */
+/*   Updated: 2024/10/01 16:40:08 by toferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void ft_quick_sort(t_data *data)
+{
+	size_t	n;
+
+	n = 0;
+	while (*data->stack_a)
+	{
+		while ((*data->stack_a)->index != n)
+		{
+			ra(data);
+		}
+		pb(data);
+		n++;
+	}
+	while (*data->stack_b)
+		pa(data);
+}
 
 // void	ft_insertion_sort(t_data *data, t_node **s_a, t_node **s_b)
 // {
@@ -74,15 +92,15 @@ int	main(int argc, char **argv)
 	// ft_bubble_sort(&data);
 	ft_printf("\nbefore a\n");
 	ft_print_list(*(data.stack_a));
-	ft_printf("\nbefore b\n");
-	ft_print_list(*(data.stack_b));
+	// ft_printf("\nbefore b\n");
+	// ft_print_list(*(data.stack_b));
 	// ft_insertion_sort(&data, data.stack_a, data.stack_b);
-	pb(&data);
+	ft_quick_sort(&data);
 	free(temp);
-	ft_printf("\nafter a\n");
-	ft_print_list(*(data.stack_a));
-	ft_printf("\nafter b\n");
-	ft_print_list(*(data.stack_b));
+	// ft_printf("\nafter a\n");
+	// ft_print_list(*(data.stack_a));
+	// ft_printf("\nafter b\n");
+	// ft_print_list(*(data.stack_b));
 	clean_list(data.stack_a);//, data.size);
 	clean_list(data.stack_b);
 	return (0);
