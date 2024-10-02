@@ -6,7 +6,7 @@
 /*   By: etom <etom@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 16:51:03 by toferrei          #+#    #+#             */
-/*   Updated: 2024/10/02 00:58:14 by etom             ###   ########.fr       */
+/*   Updated: 2024/10/02 01:32:58 by etom             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,17 +88,17 @@ int	main(int argc, char **argv)
 		error_message(4);
 	list_maker(&data, temp);
 	// ft_bubble_sort(&data);
-	ft_printf("\nbefore a\n");
-	ft_print_list(*(data.stack_a));
-	ft_printf("\nbefore b\n");
-	ft_print_list(*(data.stack_b));
+	// ft_printf("\nbefore a\n");
+	// ft_print_list(*(data.stack_a));
+	// ft_printf("\nbefore b\n");
+	// ft_print_list(*(data.stack_b));
 	// ft_insertion_sort(&data, data.stack_a, data.stack_b);
 	ft_quick_sort(&data);
 	free(temp);
-	ft_printf("\nafter a\n");
-	ft_print_list(*(data.stack_a));
-	ft_printf("\nafter b\n");
-	ft_print_list(*(data.stack_b));
+	// ft_printf("\nafter a\n");
+	// ft_print_list(*(data.stack_a));
+	// ft_printf("\nafter b\n");
+	// ft_print_list(*(data.stack_b));
 	clean_list(data.stack_a);//, data.size);
 	clean_list(data.stack_b);
 	return (0);
