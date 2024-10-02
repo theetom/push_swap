@@ -6,7 +6,7 @@
 /*   By: toferrei <toferrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 03:16:53 by etom              #+#    #+#             */
-/*   Updated: 2024/10/01 15:05:52 by toferrei         ###   ########.fr       */
+/*   Updated: 2024/10/02 15:04:21 by toferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,14 +55,12 @@ void	list_maker(t_data *data, int *arr)
 	size_t	n;
 	t_node	*temp1;
 	int		*temp;
+
 	data->stack_a = malloc(sizeof * data->stack_a);
 	*data->stack_a = NULL;
 	data->stack_b = malloc(sizeof * data->stack_b);
 	*data->stack_b = NULL;
 	temp = array_sort(data, arr);
-	printf("\ntemp\n");
-	print_array(temp, data);
-	
 	n = 0;
 	while (n < data->size)
 	{
