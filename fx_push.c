@@ -3,20 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   fx_push.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: toferrei <toferrei@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: etom <etom@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 17:47:16 by toferrei          #+#    #+#             */
-/*   Updated: 2024/09/30 19:45:48 by toferrei         ###   ########.fr       */
+/*   Updated: 2024/10/04 01:55:13 by etom             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	take_from_src(t_node **src, t_node *temp)
+static void	take_from_src(t_node **src)
 {
 	t_node	*last_s;
 	t_node	*scnd_s;
-	temp = (*src);
+
 	last_s = (*src)->prev;
 	scnd_s = (*src)->next;
 	if ((*src)->next == (*src))
@@ -59,7 +59,7 @@ static void	push(t_node **src, t_node **dst)
 	if (!(*src))
 		return ;
 	temp = (*src);
-	take_from_src(src, temp);
+	take_from_src(src);
 	put_in_dst(dst, temp);	
 }
 

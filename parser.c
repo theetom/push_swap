@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parser.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: toferrei <toferrei@student.42.fr>          +#+  +:+       +#+        */
+/*   By: etom <etom@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 16:21:53 by toferrei          #+#    #+#             */
-/*   Updated: 2024/10/01 15:37:43 by toferrei         ###   ########.fr       */
+/*   Updated: 2024/10/04 01:52:09 by etom             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,9 +65,7 @@ static int	*args_parser(t_data *data, int argc, char **argv)
 int	*parser(t_data *data, int argc, char **argv)
 {
 	int		*result;
-	size_t	n;
 
-	n = 0;
 	if (argc == 2)
 		result = string_parser(data, argv[1]);
 	else
