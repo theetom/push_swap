@@ -6,7 +6,7 @@
 /*   By: etom <etom@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 16:51:03 by toferrei          #+#    #+#             */
-/*   Updated: 2024/10/04 01:57:42 by etom             ###   ########.fr       */
+/*   Updated: 2024/10/04 16:12:36 by etom             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,6 +98,13 @@ void print_array(int *arr, t_data *data)
 	}
 }
 
+void three_numbers(t_data *data)
+{
+	if ((*data->stack_a)->index == 1
+		&& (*data->stack_a)->next->index)
+		return ;
+}
+
 void	two_numbers(t_data *data)
 {
 	if ((*data->stack_a)->index == 2)
@@ -122,7 +129,6 @@ int	main(int argc, char **argv)
 		turk_sort(&data);
 	else
 		two_numbers(&data);
-	sa(&data);
 	free(temp);
 	ft_printf("\nafter a\n");
 	ft_print_list(*(data.stack_a));
