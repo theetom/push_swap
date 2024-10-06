@@ -6,7 +6,7 @@
 /*   By: etom <etom@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 16:51:03 by toferrei          #+#    #+#             */
-/*   Updated: 2024/10/04 16:12:36 by etom             ###   ########.fr       */
+/*   Updated: 2024/10/06 22:50:33 by etom             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,10 +60,24 @@ void ft_quick_sort(t_data *data)
 		pa(data);
 }
 
+int	find_cheapest(t_data *data)
+{
+	
+}
+
 void turk_sort(t_data *data)
 {
-	int	n = data->size;
-	n++;
+	int	n;
+	n = data->size;
+	data->s_s_b = 0;
+
+	pb(data);
+	pb(data);
+	while (list_size((*data->stack_a)) > 3)
+	{
+		
+	}
+	
 }
 
 size_t	list_size(t_node **lst)
@@ -98,14 +112,14 @@ void print_array(int *arr, t_data *data)
 	}
 }
 
-void three_numbers(t_data *data)
+void three_numbers(t_data *data) // WIP
 {
 	if ((*data->stack_a)->index == 1
 		&& (*data->stack_a)->next->index)
 		return ;
 }
 
-void	two_numbers(t_data *data)
+void	two_numbers(t_data *data) // WIP
 {
 	if ((*data->stack_a)->index == 2)
 		ra(data);
