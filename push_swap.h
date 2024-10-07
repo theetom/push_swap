@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: etom <etom@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: toferrei <toferrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 16:51:20 by toferrei          #+#    #+#             */
-/*   Updated: 2024/10/06 18:21:07 by etom             ###   ########.fr       */
+/*   Updated: 2024/10/07 16:54:12 by toferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,11 @@ typedef struct s_data
 	int			max_value;
 	size_t		size; //size of array aka qtt of nbs to sort
 	size_t		s_s_b; // size stack b
+	size_t		max_b;
+	size_t		min_b;
+	int			mv_a;
+	int			mv_b;
+	int			mv_a_b;
 }				t_data;
 
 void	print_array(int *arr, t_data *data);
@@ -71,9 +76,8 @@ t_node	*ft_newnode(int content, size_t index);
 void	ft_list_add_back(t_node **lst, t_node *new);
 void	ft_list_add_front(t_node **lst, t_node *new);
 t_node	*ft_listlast(t_node *lst);
-
+size_t	list_size(t_node **lst);
 void	ft_print_list(t_node *lst);
-
 void	clean_list(t_node **lst);
 
 //		Subject Functions

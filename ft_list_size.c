@@ -1,26 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init.c                                             :+:      :+:    :+:   */
+/*   ft_list_size.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: toferrei <toferrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/23 00:46:39 by etom              #+#    #+#             */
-/*   Updated: 2024/10/07 16:37:51 by toferrei         ###   ########.fr       */
+/*   Created: 2024/10/07 16:53:11 by toferrei          #+#    #+#             */
+/*   Updated: 2024/10/07 16:53:49 by toferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void init(t_data *data)
+size_t	list_size(t_node **lst)
 {
-    data->stack_a = NULL;
-    data->stack_b = NULL;
-    data->temp = NULL;
-    data->max_value = 0;
-    data->max_b = 0;
-    data->min_b = 0;
-    data->mv_a = 0;
-    data->mv_b = 0;
-    data->mv_a_b = 0;
+	t_node *temp;
+	t_node *last;
+	size_t	n;
+
+	if (lst == NULL)
+		return (0);
+	temp = *lst;
+	last = (*lst)->prev;
+	temp = temp->next;
+	n = 1;
+	while (temp->prev != last)
+	{
+		temp = temp->next;
+		n++;
+	}
+	return (n);
 }

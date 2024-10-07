@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: etom <etom@student.42.fr>                  +#+  +:+       +#+         #
+#    By: toferrei <toferrei@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/18 16:52:47 by toferrei          #+#    #+#              #
-#    Updated: 2024/10/04 13:49:39 by etom             ###   ########.fr        #
+#    Updated: 2024/10/07 17:13:10 by toferrei         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,7 +38,7 @@ $(NAME): $(OBJECTS)
 
 # Rule for building object files
 %.o: %.c
-	@$(CC) $(CFLAGS) -c $< -o $@
+	@$(CC) -c $< -o $@
 
 # Clean object files
 clean:
