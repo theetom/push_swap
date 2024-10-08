@@ -6,7 +6,7 @@
 /*   By: etom <etom@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 00:51:50 by etom              #+#    #+#             */
-/*   Updated: 2024/10/08 03:14:35 by etom             ###   ########.fr       */
+/*   Updated: 2024/10/08 13:50:05 by etom             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,35 +69,27 @@ size_t	find_right_below(t_node *lst, size_t nb)
 	{
 		
 		if (nb == lst->index)
-			{ft_printf("first nb is :%d and index is:%d\n", nb, lst->index);
-			return (nb);}
+			return (nb);
 		lst = lst->next;
 		while (lst->prev != last)
 		{
 			if (nb == lst->index)
-			{ft_printf("2nd nb is :%d and index is:%d\n", nb, lst->index);
-				return (nb);}
+				return (nb);
 			lst = lst->next;
 		}
 		nb--;
 	}
-	ft_printf("3rd nb is :%d and index is:%d\n", nb, lst->index);
 	return (0);
 }
 
 int calculate_for_node(t_data *data, t_node *lst)
 {
-	ft_printf("passei ca!\n");
 	data->mv_b = 0;
 	data->mv_a_b = 0;
 	if (lst->index < data->min_b)
 		data->mv_b = 0;
 	if (lst->index > data->max_b)
-	{
-		ft_printf("passei ca2!\n");
-		ft_printf("max b%d\n", data->max_b);
 		data->mv_b = fastest_route(*data->stack_b, data->max_b);
-	}
 	else if (lst->index > data->min_b)
 		data->mv_b = fastest_route(*data->stack_b, find_right_below(*data->stack_b, lst->index));
 	if ((data->mv_a > 0 && data->mv_b > 0) || (data->mv_a < 0 && data->mv_b < 0))
@@ -170,7 +162,6 @@ void	send_to_b(t_data *data)
 	while (list_size(data->stack_a) > 1)
 	{
 		find_cheapest(data, *(data->stack_a));
-		ft_printf("\ndepois\n");
 		while (data->mv_a_b > 0)
 		{
 			rr(data);
@@ -204,7 +195,7 @@ void	send_to_b(t_data *data)
 		pb(data);
 		if ((*data->stack_b)->index < (*data->stack_b)->prev->index)
 			rrb(data);
-		data->s_s_b++; //size stack b, dont see the point in knowing anymore
+		data->s_s_b++;
 		is_max_min(data, (*data->stack_b)->index);
 	}
 }
@@ -213,12 +204,37 @@ void from_b_to_a(t_data *data)
 {
 	int	temp;
 	int n;
-	temp = (*data->stack_a)->index;
-	n = fastest_route(*data->stack_b, data->max_b);
-	if (n > 0)
+	int m;
 
-	while (*data->stack_b && (*data->stack_b)->index > temp)
-		pa(data);
+	m = data->max_b;
+	temp = (*data->stack_a)->index;
+	
+	while (data->s_s_b > 0)
+	{
+		while (data->s_s_b > 0 && m != temp)
+		{
+			n = fastest_route(*data->stack_b, m);
+			while (n > 0)
+			{
+				rb(data);
+				n--;
+			}
+			while (n < 0)
+			{
+				rrb(data);
+				n++;
+			}
+			pa(data);
+			data->s_s_b--;
+			m--;
+		}
+		if (m == temp)
+		{
+			rra(data);
+			temp = -1;
+			m--;
+		}
+	}
 }
 
 void turk_sort(t_data *data)
@@ -230,8 +246,4 @@ void turk_sort(t_data *data)
 	init_sort(data);
 	send_to_b(data);
 	from_b_to_a(data);
-	ft_printf("\nwhile b\n");
-	ft_print_list(*data->stack_b);
-	ft_printf("\nwhile a\n");
-	ft_print_list(*data->stack_a);
 }
