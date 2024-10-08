@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: toferrei <toferrei@student.42.fr>          +#+  +:+       +#+        */
+/*   By: etom <etom@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 16:51:20 by toferrei          #+#    #+#             */
-/*   Updated: 2024/10/07 16:54:12 by toferrei         ###   ########.fr       */
+/*   Updated: 2024/10/08 01:01:22 by etom             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,10 @@ int		*parser(t_data *data, int argc, char **argv);
 
 void	list_maker(t_data *data, int *arr);
 
+// 		Sort Algo
+
+void	turk_sort(t_data *data);
+
 //		Utils for lists
 
 t_node	*ft_newnode(int content, size_t index);
@@ -79,6 +83,11 @@ t_node	*ft_listlast(t_node *lst);
 size_t	list_size(t_node **lst);
 void	ft_print_list(t_node *lst);
 void	clean_list(t_node **lst);
+
+//		Utils
+
+int		ft_abs(int nb);
+void	print_array(int *arr, t_data *data);
 
 //		Subject Functions
 
