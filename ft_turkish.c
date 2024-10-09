@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_turkish.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: etom <etom@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: toferrei <toferrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 00:51:50 by etom              #+#    #+#             */
-/*   Updated: 2024/10/08 13:50:05 by etom             ###   ########.fr       */
+/*   Updated: 2024/10/09 18:25:22 by toferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,20 +65,17 @@ size_t	find_right_below(t_node *lst, size_t nb)
 	t_node	*last;
 
 	last = lst->prev;
+	if (nb == lst->index)
+		return (nb);
+	lst = lst->next;
 	while (nb > 0)
 	{
-		
 		if (nb == lst->index)
 			return (nb);
+		if (lst == last)
+			nb--;
 		lst = lst->next;
-		while (lst->prev != last)
-		{
-			if (nb == lst->index)
-				return (nb);
-			lst = lst->next;
 		}
-		nb--;
-	}
 	return (0);
 }
 
@@ -87,7 +84,7 @@ int calculate_for_node(t_data *data, t_node *lst)
 	data->mv_b = 0;
 	data->mv_a_b = 0;
 	if (lst->index < data->min_b)
-		data->mv_b = 0;
+		data->mv_b = fastest_route(*data->stack_b, data->max_b);
 	if (lst->index > data->max_b)
 		data->mv_b = fastest_route(*data->stack_b, data->max_b);
 	else if (lst->index > data->min_b)
@@ -134,7 +131,7 @@ int	find_cheapest(t_data *data, t_node *lst)
 	}
 	while (lst->index != index)
 		lst = lst->next;
-	data->mv_a = fastest_route(lst, lst->index);
+	data->mv_a = fastest_route(*data->stack_a, lst->index);
 	calculate_for_node(data, lst);
 	return (index);
 }
@@ -149,10 +146,10 @@ void	is_max_min(t_data *data, size_t nb)
 
 void	init_sort(t_data *data)
 {
-	is_max_min(data, (*data->stack_a)->index);
 	pb(data);
-	is_max_min(data, (*data->stack_a)->index);
+	is_max_min(data, (*data->stack_b)->index);
 	pb(data);
+	is_max_min(data, (*data->stack_b)->index);
 	if ((*data->stack_b)->index == data->min_b)
 		rb(data);
 }
@@ -193,8 +190,6 @@ void	send_to_b(t_data *data)
 			data->mv_b++;
 		}
 		pb(data);
-		if ((*data->stack_b)->index < (*data->stack_b)->prev->index)
-			rrb(data);
 		data->s_s_b++;
 		is_max_min(data, (*data->stack_b)->index);
 	}
@@ -205,10 +200,10 @@ void from_b_to_a(t_data *data)
 	int	temp;
 	int n;
 	int m;
+	
 
 	m = data->max_b;
 	temp = (*data->stack_a)->index;
-	
 	while (data->s_s_b > 0)
 	{
 		while (data->s_s_b > 0 && m != temp)
@@ -243,7 +238,17 @@ void turk_sort(t_data *data)
 
 	n = data->size;
 	data->s_s_b = 2;
-	init_sort(data);
-	send_to_b(data);
+	if (n > 4)
+	{
+		init_sort(data);
+		send_to_b(data);
+	}
+	else
+	{
+		pb(data);
+		data->s_s_b++;
+		is_max_min(data, (*data->stack_b)->index);
+		three_numbers(data);
+	}
 	from_b_to_a(data);
 }

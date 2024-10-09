@@ -6,7 +6,7 @@
 #    By: toferrei <toferrei@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/18 16:52:47 by toferrei          #+#    #+#              #
-#    Updated: 2024/10/07 17:13:10 by toferrei         ###   ########.fr        #
+#    Updated: 2024/10/09 17:52:05 by toferrei         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ OBJECTS = $(SOURCES:.c=.o)
 
 # Compiler and flags
 CC      = cc
-CFLAGS  = -Wall -Wextra -Werror -L$(PRINTF) -L$(LIBFT) 
+CFLAGS  = -Wall -Wextra -Werror -g -L$(PRINTF) -L$(LIBFT) 
 LDFLAGS = -l:libftprintf.a -l:libft.a
 
 # Default target
