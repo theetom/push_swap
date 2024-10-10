@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   errors.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: toferrei <toferrei@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: toferrei <toferrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 14:59:44 by toferrei          #+#    #+#             */
-/*   Updated: 2024/09/26 14:21:50 by toferrei         ###   ########.fr       */
+/*   Updated: 2024/10/10 16:53:29 by toferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 // error message handler
 
-void error_message(size_t err)
+void	error_message(size_t err)
 {
 	if (err == 0)
 		ft_printf("Malloc error\n");

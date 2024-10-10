@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fx_push.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: etom <etom@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: toferrei <toferrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/30 17:47:16 by toferrei          #+#    #+#             */
-/*   Updated: 2024/10/10 01:43:31 by etom             ###   ########.fr       */
+/*   Updated: 2024/10/10 16:54:39 by toferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ static void	push(t_node **src, t_node **dst)
 		return ;
 	temp = (*src);
 	take_from_src(src);
-	put_in_dst(dst, temp);	
+	put_in_dst(dst, temp);
 }
 
 void	pa(t_data *data)

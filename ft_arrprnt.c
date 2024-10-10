@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_arrprnt.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: etom <etom@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: toferrei <toferrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 00:59:21 by etom              #+#    #+#             */
-/*   Updated: 2024/10/08 00:59:58 by etom             ###   ########.fr       */
+/*   Updated: 2024/10/10 16:53:45 by toferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void print_array(int *arr, t_data *data)
+void	print_array(int *arr, t_data *data)
 {
 	size_t		n;
 

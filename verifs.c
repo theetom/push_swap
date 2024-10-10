@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   verifs.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: etom <etom@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: toferrei <toferrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 15:03:44 by toferrei          #+#    #+#             */
-/*   Updated: 2024/10/10 01:40:34 by etom             ###   ########.fr       */
+/*   Updated: 2024/10/10 16:09:50 by toferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,12 @@ void	string_argument_chkr(char *str, int sit)
 	{
 		if (sit == 1)
 		{
-			if (ft_isdigit(str[n]) == 0 && str[n] != ' ' && str[n] != '-')
+			if (ft_isdigit(str[n]) == 0 && str[n] != ' ' \
+			&& str[n] != '-' && str[n] != '+')
 				error_message(2);
 		}
 		else
-			if (ft_isdigit(str[n]) == 0 && str[n] != '-')
+			if (ft_isdigit(str[n]) == 0 && str[n] != '-' && str[n] != '+')
 				error_message(2);
 		n++;
 	}

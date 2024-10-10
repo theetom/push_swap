@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: etom <etom@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: toferrei <toferrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 16:51:20 by toferrei          #+#    #+#             */
-/*   Updated: 2024/10/10 12:59:53 by etom             ###   ########.fr       */
+/*   Updated: 2024/10/10 16:51:11 by toferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,9 @@ void	list_maker(t_data *data, int *arr);
 
 // 		Sort Algo
 
+void	ft_sort(t_data *data);
 void	turk_sort(t_data *data);
+void	two_numbers(t_data *data);
 void	three_numbers(t_data *data);
 size_t	find_right_below(t_node *lst, size_t nb);
 void	send_to_b(t_data *data);
@@ -82,6 +84,7 @@ void	from_b_to_a(t_data *data);
 
 // 		Sort Utils
 
+int		is_list_sorted(t_data *data, t_node *lst);
 void	is_max_min(t_data *data, size_t nb);
 void	rotate_a_b(t_data *data, int n);
 void	rotate_a(t_data *data, int n);
