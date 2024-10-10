@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   new_list.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: toferrei <toferrei@student.42.fr>          +#+  +:+       +#+        */
+/*   By: etom <etom@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 03:16:53 by etom              #+#    #+#             */
-/*   Updated: 2024/10/02 15:04:21 by toferrei         ###   ########.fr       */
+/*   Updated: 2024/10/10 01:41:01 by etom             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int *array_sort(t_data *data, int *arr)
+int	*array_sort(t_data *data, int *arr)
 {
 	size_t	n;
 	int		*temp;
@@ -30,7 +30,7 @@ int *array_sort(t_data *data, int *arr)
 		if (temp[n] > temp[n + 1])
 		{
 			temp[n] ^= temp[n + 1];
- 			temp[n + 1] ^= temp[n];
+			temp[n + 1] ^= temp[n];
 			temp[n] ^= temp[n + 1];
 			n = 0;
 		}

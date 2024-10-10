@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fx_swap.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: toferrei <toferrei@student.42lisboa.com    +#+  +:+       +#+        */
+/*   By: etom <etom@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/26 16:17:26 by toferrei          #+#    #+#             */
-/*   Updated: 2024/09/30 20:03:34 by toferrei         ###   ########.fr       */
+/*   Updated: 2024/10/10 01:42:28 by etom             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,17 +18,17 @@ static void	swap(t_node **lst)
 	t_node	*second;
 	t_node	*last;
 
-	if(!(*lst) || (*lst)->next == *lst)
+	if (!(*lst) || (*lst)->next == *lst)
 		return ;
 	first = *lst;
 	second = first->next;
 	last = first->prev;
 	first->next = second->next;
-    second->next->prev = first;
-    second->next = first;
-    second->prev = last;
-    first->prev = second;
-    last->next = second;
+	second->next->prev = first;
+	second->next = first;
+	second->prev = last;
+	first->prev = second;
+	last->next = second;
 	*lst = second;
 }
 

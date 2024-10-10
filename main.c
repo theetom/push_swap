@@ -6,7 +6,7 @@
 /*   By: etom <etom@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 16:51:03 by toferrei          #+#    #+#             */
-/*   Updated: 2024/10/10 01:30:50 by etom             ###   ########.fr       */
+/*   Updated: 2024/10/10 01:41:49 by etom             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 #include "push_swap.h"
 
-void three_numbers(t_data *data)
+void	three_numbers(t_data *data)
 {
 	int	first;
 	int	second;
@@ -49,9 +49,9 @@ void	two_numbers(t_data *data)
 		ra(data);
 }
 
-int	is_list_sorted (t_data *data, t_node *lst)
+int	is_list_sorted(t_data *data, t_node *lst)
 {
-	int n;
+	int		n;
 	t_node	*last;
 
 	last = lst->prev;
@@ -112,5 +112,4 @@ int	main(int argc, char **argv)
 	clean_list(data.stack_a);
 	clean_list(data.stack_b);
 	return (0);
-	
 }

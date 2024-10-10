@@ -6,13 +6,13 @@
 /*   By: etom <etom@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 15:03:44 by toferrei          #+#    #+#             */
-/*   Updated: 2024/09/25 02:55:37 by etom             ###   ########.fr       */
+/*   Updated: 2024/10/10 01:40:34 by etom             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void string_argument_chkr(char *str, int sit)
+void	string_argument_chkr(char *str, int sit)
 {
 	size_t	n;
 
@@ -31,13 +31,13 @@ void string_argument_chkr(char *str, int sit)
 	}
 }
 
-int is_list_valid(t_data *data, int *lst)
+int	is_list_valid(t_data *data, int *lst)
 {
 	size_t	n;
 	size_t	m;
 
 	n = 0;
-	while(n < data->size)
+	while (n < data->size)
 	{
 		m = n + 1;
 		while (m < data->size)
@@ -48,10 +48,10 @@ int is_list_valid(t_data *data, int *lst)
 		}
 		n++;
 	}
-	return(1);
+	return (1);
 }
 
-void first_verifs(int argc, char **argv)
+void	first_verifs(int argc, char **argv)
 {
 	size_t	n;
 

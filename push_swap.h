@@ -6,7 +6,7 @@
 /*   By: etom <etom@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 16:51:20 by toferrei          #+#    #+#             */
-/*   Updated: 2024/10/10 00:50:58 by etom             ###   ########.fr       */
+/*   Updated: 2024/10/10 01:51:39 by etom             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,9 +74,13 @@ void	list_maker(t_data *data, int *arr);
 
 void	turk_sort(t_data *data);
 void	three_numbers(t_data *data);
+size_t	find_right_below(t_node *lst, size_t nb);
+void	send_to_b(t_data *data);
+void	from_b_to_a(t_data *data);
 
 // 		Sort Utils
 
+void	is_max_min(t_data *data, size_t nb);
 void	rotate_a_b(t_data *data, int n);
 void	rotate_a(t_data *data, int n);
 void	rotate_b(t_data *data, int n);

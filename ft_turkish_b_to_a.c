@@ -1,36 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstprnt.c                                       :+:      :+:    :+:   */
+/*   ft_turkish_b_to_a.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: etom <etom@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/22 00:56:05 by etom              #+#    #+#             */
-/*   Updated: 2024/10/10 01:55:34 by etom             ###   ########.fr       */
+/*   Created: 2024/10/10 01:50:28 by etom              #+#    #+#             */
+/*   Updated: 2024/10/10 01:51:02 by etom             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_print_list(t_node *lst)
+void	from_b_to_a(t_data *data)
 {
-	t_node	*last;
-	t_node	*temp;
+	int	temp;
+	int	m;
+	int	n;
 
-	if (lst == NULL)
+	m = data->max_b;
+	while (data->s_s_b > 0)
 	{
-		ft_printf("Tried printing empty list\n");
-		return ;
-	}
-	temp = lst;
-	last = lst->prev;
-	ft_printf("content %d	", temp->content);
-	ft_printf("index %d\n", temp->index);
-	temp = temp->next;
-	while (temp->prev != last)
-	{
-		ft_printf("content %d	", temp->content);
-		ft_printf("index %d\n", temp->index);
-		temp = temp->next;
+		temp = (*data->stack_a)->prev->index;
+		while (data->s_s_b > 0 && m != temp)
+		{
+			rotate_b(data, fastest_route(*data->stack_b, m));
+			pa(data);
+			data->s_s_b--;
+			m--;
+		}
+		if (m == temp)
+		{
+			rra(data);
+			m--;
+		}
 	}
 }

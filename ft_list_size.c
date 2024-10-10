@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_list_size.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: toferrei <toferrei@student.42.fr>          +#+  +:+       +#+        */
+/*   By: etom <etom@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/07 16:53:11 by toferrei          #+#    #+#             */
-/*   Updated: 2024/10/07 16:53:49 by toferrei         ###   ########.fr       */
+/*   Updated: 2024/10/10 01:53:15 by etom             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 size_t	list_size(t_node **lst)
 {
-	t_node *temp;
-	t_node *last;
+	t_node	*temp;
+	t_node	*last;
 	size_t	n;
 
 	if (lst == NULL)

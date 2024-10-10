@@ -6,7 +6,7 @@
 /*   By: etom <etom@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 16:21:53 by toferrei          #+#    #+#             */
-/*   Updated: 2024/10/10 01:27:05 by etom             ###   ########.fr       */
+/*   Updated: 2024/10/10 01:40:17 by etom             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ static int	*string_parser(t_data *data, char *str)
 	}
 	data->size = n;
 	n = 0;
-	while(temp[n])
+	while (temp[n])
 		free(temp[n++]);
 	free(temp);
 	return (result);
