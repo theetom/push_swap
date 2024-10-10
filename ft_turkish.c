@@ -3,14 +3,33 @@
 /*                                                        :::      ::::::::   */
 /*   ft_turkish.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: toferrei <toferrei@student.42.fr>          +#+  +:+       +#+        */
+/*   By: etom <etom@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 00:51:50 by etom              #+#    #+#             */
-/*   Updated: 2024/10/09 18:25:22 by toferrei         ###   ########.fr       */
+/*   Updated: 2024/10/10 01:21:53 by etom             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+size_t	find_right_below(t_node *lst, size_t nb)
+{
+	t_node	*last;
+
+	last = lst->prev;
+	if (nb == lst->index)
+		return (nb);
+	lst = lst->next;
+	while (nb > 0)
+	{
+		if (nb == lst->index)
+			return (nb);
+		if (lst == last)
+			nb--;
+		lst = lst->next;
+	}
+	return (0);
+}
 
 int	fastest_route(t_node *lst, size_t n)
 {
@@ -58,25 +77,6 @@ void ft_insertion_sort(t_data *data)
 	}
 	while (*data->stack_b)
 		pa(data);
-}
-
-size_t	find_right_below(t_node *lst, size_t nb)
-{
-	t_node	*last;
-
-	last = lst->prev;
-	if (nb == lst->index)
-		return (nb);
-	lst = lst->next;
-	while (nb > 0)
-	{
-		if (nb == lst->index)
-			return (nb);
-		if (lst == last)
-			nb--;
-		lst = lst->next;
-		}
-	return (0);
 }
 
 int calculate_for_node(t_data *data, t_node *lst)
@@ -159,36 +159,12 @@ void	send_to_b(t_data *data)
 	while (list_size(data->stack_a) > 1)
 	{
 		find_cheapest(data, *(data->stack_a));
-		while (data->mv_a_b > 0)
-		{
-			rr(data);
-			data->mv_a_b--;
-		}
-		while (data->mv_a_b < 0)
-		{
-			rrr(data);
-			data->mv_a_b++;
-		}
-		while (data->mv_a > 0)
-		{
-			ra(data);
-			data->mv_a--;
-		}
-		while (data->mv_a < 0)
-		{
-			rra(data);
-			data->mv_a++;
-		}
-		while (data->mv_b > 0)
-		{	
-			rb(data);
-			data->mv_b--;
-		}
-		while (data->mv_b < 0)
-		{	
-			rrb(data);
-			data->mv_b++;
-		}
+		rotate_a(data, data->mv_a);
+		rotate_a_b(data, data->mv_a_b);
+		rotate_b(data, data->mv_b);
+		data->mv_a_b = 0;
+		data->mv_b = 0;
+		data->mv_a = 0;
 		pb(data);
 		data->s_s_b++;
 		is_max_min(data, (*data->stack_b)->index);
@@ -198,27 +174,16 @@ void	send_to_b(t_data *data)
 void from_b_to_a(t_data *data)
 {
 	int	temp;
-	int n;
 	int m;
-	
+	int	n;
 
 	m = data->max_b;
-	temp = (*data->stack_a)->index;
 	while (data->s_s_b > 0)
 	{
+		temp = (*data->stack_a)->prev->index;
 		while (data->s_s_b > 0 && m != temp)
 		{
-			n = fastest_route(*data->stack_b, m);
-			while (n > 0)
-			{
-				rb(data);
-				n--;
-			}
-			while (n < 0)
-			{
-				rrb(data);
-				n++;
-			}
+			rotate_b(data, fastest_route(*data->stack_b, m));
 			pa(data);
 			data->s_s_b--;
 			m--;
@@ -226,7 +191,6 @@ void from_b_to_a(t_data *data)
 		if (m == temp)
 		{
 			rra(data);
-			temp = -1;
 			m--;
 		}
 	}
@@ -242,6 +206,7 @@ void turk_sort(t_data *data)
 	{
 		init_sort(data);
 		send_to_b(data);
+		from_b_to_a(data);
 	}
 	else
 	{
@@ -249,6 +214,12 @@ void turk_sort(t_data *data)
 		data->s_s_b++;
 		is_max_min(data, (*data->stack_b)->index);
 		three_numbers(data);
+		if ((*data->stack_b)->index == data->size)
+			rotate_a(data, fastest_route(*data->stack_a, 1));
+		else
+			rotate_a(data, fastest_route(*data->stack_a, data->max_b + 1));
+		pa(data);
 	}
-	from_b_to_a(data);
+	// from_b_to_a(data);
+	rotate_a(data, fastest_route(*data->stack_a, 1));
 }

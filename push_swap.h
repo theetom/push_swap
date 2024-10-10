@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: toferrei <toferrei@student.42.fr>          +#+  +:+       +#+        */
+/*   By: etom <etom@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 16:51:20 by toferrei          #+#    #+#             */
-/*   Updated: 2024/10/09 17:21:52 by toferrei         ###   ########.fr       */
+/*   Updated: 2024/10/10 00:50:58 by etom             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,12 @@ void	list_maker(t_data *data, int *arr);
 void	turk_sort(t_data *data);
 void	three_numbers(t_data *data);
 
+// 		Sort Utils
+
+void	rotate_a_b(t_data *data, int n);
+void	rotate_a(t_data *data, int n);
+void	rotate_b(t_data *data, int n);
+
 //		Utils for lists
 
 t_node	*ft_newnode(int content, size_t index);
@@ -85,31 +91,31 @@ size_t	list_size(t_node **lst);
 void	ft_print_list(t_node *lst);
 void	clean_list(t_node **lst);
 
-//		Utils
+//	Utils
 
 int		ft_abs(int nb);
 void	print_array(int *arr, t_data *data);
 
 //		Subject Functions
 
-//			swap fx
+//		swap fx
 
 void	sa(t_data *data);
 void	sb(t_data *data);
 void	ss(t_data *data);
 
-//			push fx
+//		push fx
 
 void	pa(t_data *data);
 void	pb(t_data *data);
 
-//			rotate up fx
+//		rotate up fx
 
 void	ra(t_data *data);
 void	rb(t_data *data);
 void	rr(t_data *data);
 
-//			rotate down fx
+//		rotate down fx
 
 void	rra(t_data *data);
 void	rrb(t_data *data);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: toferrei <toferrei@student.42.fr>          +#+  +:+       +#+        */
+/*   By: etom <etom@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 16:51:03 by toferrei          #+#    #+#             */
-/*   Updated: 2024/10/09 17:45:37 by toferrei         ###   ########.fr       */
+/*   Updated: 2024/10/10 01:30:50 by etom             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,11 +66,19 @@ int	is_list_sorted (t_data *data, t_node *lst)
 		lst = lst->next;
 		n++;
 	}
-	ft_printf("n %d		size %d\n", n, data->size);
 	if (data->size == n)
 		return (1);
 	else
 		return (0);
+}
+
+void	second_verifs(t_data *data, int *temp)
+{
+	if (data->size < 2)
+	{
+		free(temp);
+		error_message(3);
+	}
 }
 
 int	main(int argc, char **argv)
@@ -81,8 +89,12 @@ int	main(int argc, char **argv)
 	init(&data);
 	first_verifs(argc, argv);
 	temp = parser(&data, argc, argv);
+	second_verifs(&data, temp);
 	if (is_list_valid(&data, temp) == 0)
+	{
+		free(temp);
 		error_message(4);
+	}
 	list_maker(&data, temp);
 	if (is_list_sorted(&data, *data.stack_a))
 	{
@@ -92,8 +104,13 @@ int	main(int argc, char **argv)
 			three_numbers(&data);
 		else
 			two_numbers(&data);}
+	if (is_list_sorted (&data, *data.stack_a) == 1)
+		ft_printf("yay\n");
+	else
+		ft_printf("nay\n");
 	free(temp);
-	clean_list(data.stack_a);//, data.size);
+	clean_list(data.stack_a);
 	clean_list(data.stack_b);
 	return (0);
+	
 }

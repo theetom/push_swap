@@ -6,7 +6,7 @@
 /*   By: etom <etom@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 16:21:53 by toferrei          #+#    #+#             */
-/*   Updated: 2024/10/04 01:52:09 by etom             ###   ########.fr       */
+/*   Updated: 2024/10/10 01:27:05 by etom             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,5 @@ int	*parser(t_data *data, int argc, char **argv)
 		result = string_parser(data, argv[1]);
 	else
 		result = args_parser(data, argc, argv);
-	if (data->size < 2)
-		error_message(3);
 	return (result);
 }
