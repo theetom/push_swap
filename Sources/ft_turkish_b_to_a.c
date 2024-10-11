@@ -6,7 +6,7 @@
 /*   By: etom <etom@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 01:50:28 by etom              #+#    #+#             */
-/*   Updated: 2024/10/10 01:51:02 by etom             ###   ########.fr       */
+/*   Updated: 2024/10/11 00:40:29 by etom             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ void	from_b_to_a(t_data *data)
 {
 	int	temp;
 	int	m;
-	int	n;
 
 	m = data->max_b;
 	while (data->s_s_b > 0)

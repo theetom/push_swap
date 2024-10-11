@@ -3,28 +3,30 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: toferrei <toferrei@student.42.fr>          +#+  +:+       +#+         #
+#    By: etom <etom@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/18 16:52:47 by toferrei          #+#    #+#              #
-#    Updated: 2024/10/09 17:52:05 by toferrei         ###   ########.fr        #
+#    Updated: 2024/10/11 01:15:10 by etom             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		=	PushSwap
+NAME        =   push_swap
 
-LIBFT		=	Libft/
-PRINTF		=	Ft_printf/
-LIBFT_A		=	$(LIBFT)libft.a
-PRINTF_A	=	$(PRINTF)libftprintf.a
-SOURCES		=	$(shell find $(SRC) -maxdepth 1 -name "*.c")
+LIBFT       =   Libft/
+PRINTF      =   Ft_printf/
+SRC         =   Sources/
+OBJ_DIR     =   obj/
+LIBFT_A     =   $(LIBFT)libft.a
+PRINTF_A    =   $(PRINTF)libftprintf.a
+SOURCES     =   $(shell find $(SRC) -name "*.c")
 
 # Object files
-OBJECTS = $(SOURCES:.c=.o)
+OBJECTS     =   $(SOURCES:$(SRC)%.c=$(OBJ_DIR)%.o)
 
 # Compiler and flags
-CC      = cc
-CFLAGS  = -Wall -Wextra -Werror -g -L$(PRINTF) -L$(LIBFT) 
-LDFLAGS = -l:libftprintf.a -l:libft.a
+CC          =   cc
+LDFLAGS     =   -lftprintf -lft
+CFLAGS      =   -Wall -Wextra -Werror -g -L$(PRINTF) -L$(LIBFT)
 
 # Default target
 all: $(NAME)
@@ -33,17 +35,19 @@ all: $(NAME)
 $(NAME): $(OBJECTS)
 	@$(MAKE) -s -C $(LIBFT)
 	@$(MAKE) -s -C $(PRINTF)
-	@$(CC) $(CFLAGS) -o $@ $(OBJECTS) $(LDFLAGS)
+	@$(CC) $(CFLAGS) $(OBJECTS) -o $(NAME) $(LDFLAGS)
 	@echo "All files were created"
 
 # Rule for building object files
-%.o: %.c
-	@$(CC) -c $< -o $@
+$(OBJ_DIR)%.o: $(SRC)%.c
+	@mkdir -p $(dir $@)
+	@$(CC) $(CFLAGS) -c $< -o $@
 
 # Clean object files
 clean:
 	@rm -f $(OBJECTS)
-	@echo "Push_Swap files were cleaned"
+	@rm -rf $(OBJ_DIR)
+	@echo "Push_Swap object files were cleaned"
 
 # Full clean
 fclean: clean

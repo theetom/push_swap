@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: toferrei <toferrei@student.42.fr>          +#+  +:+       +#+        */
+/*   By: etom <etom@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 16:51:20 by toferrei          #+#    #+#             */
-/*   Updated: 2024/10/10 16:51:11 by toferrei         ###   ########.fr       */
+/*   Updated: 2024/10/11 01:12:10 by etom             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@
 # include <string.h>
 # include <stdlib.h>
 # include <string.h>
-# include "Libft/libft.h"
-# include "Ft_printf/ft_printf.h"
+# include "../Libft/libft.h"
+# include "../Ft_printf/ft_printf.h"
 
 typedef struct s_node
 {
