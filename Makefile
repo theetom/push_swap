@@ -6,7 +6,7 @@
 #    By: etom <etom@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/18 16:52:47 by toferrei          #+#    #+#              #
-#    Updated: 2024/10/11 01:15:10 by etom             ###   ########.fr        #
+#    Updated: 2024/10/11 01:19:14 by etom             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -58,6 +58,11 @@ fclean: clean
 
 # Rebuild everything
 re: fclean all
+
+norminette:
+	norminette $(SRC)
+	norminette $(PRINTF)
+	norminette $(LIBFT)
 
 # Phony targets
 .PHONY: all clean fclean re
