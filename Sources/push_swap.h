@@ -6,7 +6,7 @@
 /*   By: etom <etom@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 16:51:20 by toferrei          #+#    #+#             */
-/*   Updated: 2024/10/11 01:12:10 by etom             ###   ########.fr       */
+/*   Updated: 2024/10/11 01:16:37 by etom             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,6 @@ void	is_max_min(t_data *data, size_t nb);
 void	rotate_a_b(t_data *data, int n);
 void	rotate_a(t_data *data, int n);
 void	rotate_b(t_data *data, int n);
-
 
 //		Utils for lists
 
