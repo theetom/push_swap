@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_turkish_a_to_b.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: etom <etom@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: toferrei <toferrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 01:46:44 by etom              #+#    #+#             */
-/*   Updated: 2024/10/10 01:49:22 by etom             ###   ########.fr       */
+/*   Updated: 2024/10/14 14:58:00 by toferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	send_to_b(t_data *data)
 {
-	while (list_size(data->stack_a) > 1)
+	while (list_size(data->stack_a) > 3)
 	{
 		find_cheapest(data, *(data->stack_a));
 		rotate_a(data, data->mv_a);

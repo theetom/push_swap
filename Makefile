@@ -6,7 +6,7 @@
 #    By: toferrei <toferrei@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/18 16:52:47 by toferrei          #+#    #+#              #
-#    Updated: 2024/10/14 13:53:42 by toferrei         ###   ########.fr        #
+#    Updated: 2024/10/14 16:12:51 by toferrei         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,7 +42,8 @@ SOURCES		=	$(SRC)errors.c \
 				$(SRC)main.c \
 				$(SRC)new_list.c \
 				$(SRC)parser.c \
-				$(SRC)verifs.c
+				$(SRC)verifs.c \
+				$(SRC)ft_atol.c
 
 # Object files
 OBJECTS		=	$(SOURCES:$(SRC)%.c=$(OBJ_DIR)%.o)

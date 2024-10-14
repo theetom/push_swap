@@ -3,19 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   parser.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: etom <etom@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: toferrei <toferrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 16:21:53 by toferrei          #+#    #+#             */
-/*   Updated: 2024/10/10 01:40:17 by etom             ###   ########.fr       */
+/*   Updated: 2024/10/14 16:10:04 by toferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static int	*string_parser(t_data *data, char *str)
+static long	*string_parser(t_data *data, char *str)
 {
 	char	**temp;
-	int		*result;
+	long	*result;
 	size_t	n;
 
 	n = 0;
@@ -28,7 +28,7 @@ static int	*string_parser(t_data *data, char *str)
 	n = 0;
 	while (temp[n])
 	{
-		result[n] = ft_atoi(temp[n]);
+		result[n] = ft_atol(temp[n]);
 		if (result[n] > data->max_value)
 			data->max_value = result[n];
 		n++;
@@ -41,9 +41,9 @@ static int	*string_parser(t_data *data, char *str)
 	return (result);
 }
 
-static int	*args_parser(t_data *data, int argc, char **argv)
+static long	*args_parser(t_data *data, int argc, char **argv)
 {
-	int		*result;
+	long	*result;
 	size_t	n;
 
 	n = 0;
@@ -53,7 +53,7 @@ static int	*args_parser(t_data *data, int argc, char **argv)
 	n = 1;
 	while (argv[n])
 	{
-		result[n - 1] = ft_atoi(argv[n]);
+		result[n - 1] = ft_atol(argv[n]);
 		if (result[n - 1] > data->max_value)
 			data->max_value = result[n - 1];
 		n++;
@@ -62,9 +62,9 @@ static int	*args_parser(t_data *data, int argc, char **argv)
 	return (result);
 }
 
-int	*parser(t_data *data, int argc, char **argv)
+long	*parser(t_data *data, int argc, char **argv)
 {
-	int		*result;
+	long	*result;
 
 	if (argc == 2)
 		result = string_parser(data, argv[1]);

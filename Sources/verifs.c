@@ -6,7 +6,7 @@
 /*   By: toferrei <toferrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 15:03:44 by toferrei          #+#    #+#             */
-/*   Updated: 2024/10/10 16:09:50 by toferrei         ###   ########.fr       */
+/*   Updated: 2024/10/14 16:19:22 by toferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	string_argument_chkr(char *str, int sit)
 	}
 }
 
-int	is_list_valid(t_data *data, int *lst)
+int	is_list_valid(t_data *data, long *lst)
 {
 	size_t	n;
 	size_t	m;
@@ -43,7 +43,7 @@ int	is_list_valid(t_data *data, int *lst)
 		m = n + 1;
 		while (m < data->size)
 		{
-			if (lst[n] == lst[m])
+			if (lst[n] == lst[m] | lst[n] > 2147483647 | lst[n] < -2147483648)
 				return (0);
 			m++;
 		}

@@ -6,7 +6,7 @@
 /*   By: toferrei <toferrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/10 16:41:13 by toferrei          #+#    #+#             */
-/*   Updated: 2024/10/10 16:51:27 by toferrei         ###   ########.fr       */
+/*   Updated: 2024/10/14 14:43:37 by toferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void	two_numbers(t_data *data)
 
 void	ft_sort(t_data *data)
 {
-	if (is_list_sorted(data, *data->stack_a))
+	if (!is_list_sorted(data, *data->stack_a))
 	{
 		if (data->size > 3)
 			turk_sort(data);

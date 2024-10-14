@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   new_list.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: etom <etom@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: toferrei <toferrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/25 03:16:53 by etom              #+#    #+#             */
-/*   Updated: 2024/10/10 01:41:01 by etom             ###   ########.fr       */
+/*   Updated: 2024/10/14 16:12:04 by toferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	*array_sort(t_data *data, int *arr)
+int	*array_sort(t_data *data, long *arr)
 {
 	size_t	n;
 	int		*temp;
@@ -50,7 +50,7 @@ size_t	index_finder(int *arr, int vtf)
 	return (n + 1);
 }
 
-void	list_maker(t_data *data, int *arr)
+void	list_maker(t_data *data, long *arr)
 {
 	size_t	n;
 	t_node	*temp1;

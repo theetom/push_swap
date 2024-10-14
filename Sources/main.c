@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: etom <etom@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: toferrei <toferrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 16:51:03 by toferrei          #+#    #+#             */
-/*   Updated: 2024/10/11 00:39:52 by etom             ###   ########.fr       */
+/*   Updated: 2024/10/14 16:24:49 by toferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	is_list_sorted(t_data *data, t_node *lst)
 		lst = lst->next;
 		n++;
 	}
-	while (lst != last)
+	while (lst != last && lst->index == n)
 	{
 		lst = lst->next;
 		n++;
@@ -37,7 +37,7 @@ int	is_list_sorted(t_data *data, t_node *lst)
 		return (0);
 }
 
-void	second_verifs(t_data *data, int *temp)
+void	second_verifs(t_data *data, long *temp)
 {
 	if (data->size < 2)
 	{
@@ -49,7 +49,7 @@ void	second_verifs(t_data *data, int *temp)
 int	main(int argc, char **argv)
 {
 	t_data	data;
-	int		*temp;
+	long	*temp;
 
 	init(&data);
 	first_verifs(argc, argv);

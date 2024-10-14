@@ -6,7 +6,7 @@
 /*   By: toferrei <toferrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 14:59:44 by toferrei          #+#    #+#             */
-/*   Updated: 2024/10/10 16:53:29 by toferrei         ###   ########.fr       */
+/*   Updated: 2024/10/14 16:14:29 by toferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	error_message(size_t err)
 	if (err == 3)
 		ft_printf("Not enough numbers to sort\n");
 	if (err == 4)
-		ft_printf("Repeated number\n");
+		ft_printf("Repeated number or out of range\n");
 	if (err == 5)
 		ft_printf("The list is empty.\n");
 	exit (1);

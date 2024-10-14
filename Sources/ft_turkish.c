@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_turkish.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: etom <etom@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: toferrei <toferrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 00:51:50 by etom              #+#    #+#             */
-/*   Updated: 2024/10/10 01:52:07 by etom             ###   ########.fr       */
+/*   Updated: 2024/10/14 15:21:14 by toferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,6 +114,7 @@ void	turk_sort(t_data *data)
 	{
 		init_sort(data);
 		send_to_b(data);
+		three_numbers(data);
 		from_b_to_a(data);
 	}
 	else

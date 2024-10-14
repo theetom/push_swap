@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: etom <etom@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: toferrei <toferrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 16:51:20 by toferrei          #+#    #+#             */
-/*   Updated: 2024/10/11 01:16:37 by etom             ###   ########.fr       */
+/*   Updated: 2024/10/14 16:16:28 by toferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ typedef struct s_data
 {
 	t_node		**stack_a;
 	t_node		**stack_b;
-	int			*temp;
+	long		*temp;
 	int			max_value;
 	size_t		size; //size of array aka qtt of nbs to sort
 	size_t		s_s_b; // size stack b
@@ -44,8 +44,6 @@ typedef struct s_data
 	int			mv_b;
 	int			mv_a_b;
 }				t_data;
-
-void	print_array(int *arr, t_data *data);
 
 //	All functions
 
@@ -60,15 +58,15 @@ void	error_message(size_t err);
 //		Verifications
 
 void	first_verifs(int argc, char **argv);
-int		is_list_valid(t_data *data, int *lst); // are there any doubles?
+int		is_list_valid(t_data *data, long *lst); // are there any doubles?
 
 //		Parsing (args to int array)
 
-int		*parser(t_data *data, int argc, char **argv);
+long	*parser(t_data *data, int argc, char **argv);
 
 //		Int array to double circular linked list
 
-void	list_maker(t_data *data, int *arr);
+void	list_maker(t_data *data, long *arr);
 
 // 		Sort Algo
 
@@ -103,7 +101,8 @@ void	clean_list(t_node **lst);
 //	Utils
 
 int		ft_abs(int nb);
-void	print_array(int *arr, t_data *data);
+void	print_array(long *arr, t_data *data);
+long	ft_atol(const char *nptr);
 
 //		Subject Functions
 

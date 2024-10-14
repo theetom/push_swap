@@ -1,37 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_turkish_b_to_a.c                                :+:      :+:    :+:   */
+/*   ft_atol.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: toferrei <toferrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/10 01:50:28 by etom              #+#    #+#             */
-/*   Updated: 2024/10/14 15:21:09 by toferrei         ###   ########.fr       */
+/*   Created: 2024/10/14 16:06:34 by toferrei          #+#    #+#             */
+/*   Updated: 2024/10/14 16:08:36 by toferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	from_b_to_a(t_data *data)
+long	ft_atol(const char *nptr)
 {
-	int	temp;
-	int	m;
+	long	res;
+	int		sign;
 
-	m = data->size;
-	while (data->s_s_b > 0)
+	sign = 1;
+	res = 0;
+	while (*nptr != '\0' && (*nptr == 32 || (*nptr >= 9 && *nptr <= 13)))
+		nptr++;
+	if (*nptr == '-' || *nptr == '+')
 	{
-		temp = (*data->stack_a)->prev->index;
-		while (data->s_s_b > 0 && m != temp)
-		{
-			rotate_b(data, fastest_route(*data->stack_b, m));
-			pa(data);
-			data->s_s_b--;
-			m--;
-		}
-		if (m == temp)
-		{
-			rra(data);
-			m--;
-		}
+		if (*nptr == '-')
+			sign = -1;
+		nptr++;
 	}
+	while ('0' <= *nptr && *nptr <= '9')
+	{
+		res = res * 10 + *nptr - '0';
+		nptr++;
+	}
+	return (sign * res);
 }
