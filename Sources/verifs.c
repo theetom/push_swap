@@ -6,7 +6,7 @@
 /*   By: toferrei <toferrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 15:03:44 by toferrei          #+#    #+#             */
-/*   Updated: 2024/10/14 16:19:22 by toferrei         ###   ########.fr       */
+/*   Updated: 2024/10/15 10:14:39 by toferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ void	first_verifs(int argc, char **argv)
 
 	n = 1;
 	if (argc < 2)
-		error_message(1);
+		exit (1);
 	if (argc == 2)
 		string_argument_chkr(argv[1], 1);
 	else

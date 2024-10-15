@@ -6,7 +6,7 @@
 /*   By: toferrei <toferrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 16:51:03 by toferrei          #+#    #+#             */
-/*   Updated: 2024/10/14 16:24:49 by toferrei         ###   ########.fr       */
+/*   Updated: 2024/10/15 10:19:29 by toferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void	second_verifs(t_data *data, long *temp)
 	if (data->size < 2)
 	{
 		free(temp);
-		error_message(3);
+		exit(1);
 	}
 }
 
