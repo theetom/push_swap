@@ -6,36 +6,13 @@
 /*   By: toferrei <toferrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 16:51:03 by toferrei          #+#    #+#             */
-/*   Updated: 2024/10/15 10:19:29 by toferrei         ###   ########.fr       */
+/*   Updated: 2024/10/18 15:16:11 by toferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 // https://push-swap-visualizer.vercel.app/
 
 #include "push_swap.h"
-
-int	is_list_sorted(t_data *data, t_node *lst)
-{
-	size_t	n;
-	t_node	*last;
-
-	last = lst->prev;
-	n = 1;
-	if (lst->index == n)
-	{
-		lst = lst->next;
-		n++;
-	}
-	while (lst != last && lst->index == n)
-	{
-		lst = lst->next;
-		n++;
-	}
-	if (data->size == n)
-		return (1);
-	else
-		return (0);
-}
 
 void	second_verifs(t_data *data, long *temp)
 {

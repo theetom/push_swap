@@ -6,7 +6,7 @@
 /*   By: toferrei <toferrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 16:51:20 by toferrei          #+#    #+#             */
-/*   Updated: 2024/10/14 16:16:28 by toferrei         ###   ########.fr       */
+/*   Updated: 2024/10/18 18:04:41 by toferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,8 @@ void	error_message(size_t err);
 
 void	first_verifs(int argc, char **argv);
 int		is_list_valid(t_data *data, long *lst); // are there any doubles?
+int		is_list_sorted(t_data *data, t_node *lst);
+void	string_argument_chkr(char *str, int sit);
 
 //		Parsing (args to int array)
 

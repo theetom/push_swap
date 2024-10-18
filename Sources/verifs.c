@@ -6,33 +6,27 @@
 /*   By: toferrei <toferrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 15:03:44 by toferrei          #+#    #+#             */
-/*   Updated: 2024/10/17 14:14:26 by toferrei         ###   ########.fr       */
+/*   Updated: 2024/10/18 17:39:08 by toferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	string_argument_chkr(char *str, int sit)
+int	has_int_max(long *lst)
 {
 	size_t	n;
 
 	n = 0;
-	while (str[n])
+	while (lst[n])
 	{
-		if (sit == 1)
-		{
-			if (ft_isdigit(str[n]) == 0 && str[n] != ' ' \
-			&& str[n] != '-' && str[n] != '+')
-				error_message(2);
-		}
-		else
-			if (ft_isdigit(str[n]) == 0 && str[n] != '-' && str[n] != '+')
-				error_message(2);
+		if (lst[n] > 2147483647 | lst[n] < -2147483648)
+			return (0);
 		n++;
 	}
+	return (1);
 }
 
-int	is_list_valid(t_data *data, long *lst)
+int	has_double(t_data *data, long *lst)
 {
 	size_t	n;
 	size_t	m;
@@ -43,12 +37,21 @@ int	is_list_valid(t_data *data, long *lst)
 		m = n + 1;
 		while (m < data->size)
 		{
-			if (lst[n] == lst[m] | lst[m] > 2147483647 | lst[m] < -2147483648)
+			if (lst[n] == lst[m])
 				return (0);
 			m++;
 		}
 		n++;
 	}
+	return (1);
+}
+
+int	is_list_valid(t_data *data, long *lst)
+{
+	if (has_double(data, lst) == 0)
+		return (0);
+	if (has_int_max(lst) == 0)
+		return (0);
 	return (1);
 }
 
