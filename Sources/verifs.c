@@ -6,18 +6,18 @@
 /*   By: toferrei <toferrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/24 15:03:44 by toferrei          #+#    #+#             */
-/*   Updated: 2024/10/18 17:39:08 by toferrei         ###   ########.fr       */
+/*   Updated: 2024/10/21 16:41:16 by toferrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	has_int_max(long *lst)
+int	has_int_max(long *lst, size_t max)
 {
 	size_t	n;
 
 	n = 0;
-	while (lst[n])
+	while (n < max)
 	{
 		if (lst[n] > 2147483647 | lst[n] < -2147483648)
 			return (0);
@@ -50,7 +50,7 @@ int	is_list_valid(t_data *data, long *lst)
 {
 	if (has_double(data, lst) == 0)
 		return (0);
-	if (has_int_max(lst) == 0)
+	if (has_int_max(lst, data->size) == 0)
 		return (0);
 	return (1);
 }
